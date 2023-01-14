@@ -1,0 +1,40 @@
+.notifications-utilisateur{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.notifications-utilisateur>button{
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: 5px;
+    background-color: var(--MediumCarmine);
+    height: 30px;
+    width: 50px;
+}
+
+.notifications-utilisateur>button:hover{
+    transition: 0.4s;
+    background-color: var(--HovMediumCarmine);
+}
+
+.client-connexion{
+    position: absolute;
+    top: 10px;
+    left: 170px;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+
+.client-connexion>*{
+    font-family: serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.client-connexion>a:hover{
+    text-decoration: underline;
+}

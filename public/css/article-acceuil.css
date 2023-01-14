@@ -1,0 +1,23 @@
+.articles-acceuil{
+    min-width: 650px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.article-acceuil{
+    margin-bottom: 50px;
+    padding: 20px;
+    width: 30%;
+    min-height: fit-content;
+    max-height: min-content;
+}
+
+.article-acceuil > .article-txt{
+    min-height: 175px;
+    max-height: 175px;
+    overflow: hidden;
+}
+
+.article-txt > p{
+    text-overflow: ellipsis;
+}

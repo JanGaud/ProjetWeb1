@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Freehand&family=Pacifico&display=swap');
+
+body{
+    margin: 0;
+    width: 100%;
+}
+
+main>*{
+    margin: 30px;
+    margin-top: 50px;
+}
+
+header{
+  margin-bottom: 100px;
+}
+
+a{
+  font-family: 'Times New Roman', Times, serif;
+}
+/*Typographies*/
+
+h1{
+  text-align: center;
+  color: var(--MediumCarmine);
+  font-family: 'Zilla Slab Highlight', cursive;
+  font-size: 40px;
+}
+
+h2{
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.623);
+  font-size: 30px;
+}
+
+h3{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+h4{
+  text-align: center;
+  text-decoration: overline;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.153);
+}
+
+h5{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+
+h6{
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+pre{
+  font-size: 15px;
+}
+
+p{
+  font-family: 'Times New Roman', Times;
+  font-size: 16px;
+}
+
+span{
+  color: white;
+}
+
+span>a{
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+}
+
+button{
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+/*Flex space around horizontale*/
+
+.line-separation{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*scrollbar*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--MediumCarmine); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--HovMediumCarmine); 
+  }
+
+  /*Champs imputs*/
+  input[type=text]:focus {
+    background-color: inherit;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgb(243, 221, 180) inset;
+}

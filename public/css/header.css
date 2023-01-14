@@ -1,0 +1,22 @@
+header{
+    background-color: inherit;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header-logo-container{
+    width: 150px;
+    min-width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.header-logo-container>img{
+    width: 100%;
+    height: fit-content;
+}
+

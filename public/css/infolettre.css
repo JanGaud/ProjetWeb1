@@ -1,0 +1,65 @@
+.infolettre{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    height: fit-content;
+    margin-bottom: 100px;
+}
+
+.infolettre-formulaire{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.infolettre-formulaire{
+    background-image: url("/css/img/infolettre-img.jpg");
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.155);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 545px;
+    min-width: 545px;
+    height: 300px;
+}
+
+.infolettre-courriel > input[type=text]{
+    font-family: 'Caveat', cursive;
+    font-size: 23px;
+    text-align: end;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: inherit;
+    padding-left: 10px;
+    padding-right: 20px;
+    min-width: 375px;
+    height: 35px;
+}
+
+.infolettre-courriel{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.infolettre-txt{
+    width: 375px;
+}
+
+.infolettre-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.infolettre-img{
+    width: 100px;
+    object-fit: cover;
+}
+
+.infolettre-img > img{
+    width: 100%;
+}

@@ -1,0 +1,151 @@
+/*bouton d'action sur la banniere*/
+
+.action-btn button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+/*boutons actions sur infos-carte*/
+
+.infos-carte-btn-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.infos-carte-btn-action>button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infos-carte-btn-action>button{
+    width: 175px;
+}
+
+/*les boutons de navigation des images banniere et header carrousel*/
+
+.banner-nav .btn-arrow{
+    background-color: var(--TransMediumCarmine);    
+    border: none;
+    z-index: 3;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.banner-nav .btn-arrow:hover{
+    background-color: var(--HovMediumCarmine);
+}
+
+/*boites liens boutons*/
+.boite-lien>button{
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+.boite-lien>button:hover{
+    background-color: var(--TransXiketic);
+    transition: 0.6s;
+}
+
+/* les boutons sur les arcticles d'acceuil*/
+
+.btn-article-acceuil{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-article-acceuil > button{
+    min-width: 175px;
+    max-width: 175px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-article-acceuil button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*bouton sur les cartes d'encheres*/
+.article-base button{
+    background-color: inherit;
+    border-radius: 15px;
+    border: none;
+}
+
+.article-base button:hover{
+    transition: 0.5s;
+    background-color: var(--TransMediumCarmine);
+}
+
+/*bouton sur l'infolettre*/
+.infolettre-courriel button{
+    background-color: inherit;
+    border-radius: 20px;
+    border: none;
+}
+
+.infolettre-courriel > button:hover{
+    transition: 0.5s;
+    background-color: var(--TransMediumCarmine);
+}
+
+
+/* popup-btn mise*/
+.close {
+    background-color: inherit;
+    border: none;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-footer > button{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* btns d'actions - tout les boutons d'actions qui ont le meme apparence */
+
+  .btns-actions{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(250, 250, 250, 0.393);
+    box-shadow: inset 0px 2px 2px 2px rgba(0, 0, 0, 0.087);
+  }
+
+  .btns-actions:hover{
+    transition: 0.5s;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.724);
+  }
+
+  .btns-actions:active{
+    transition: 0.1s;
+    border-radius: 20px;
+    background-color: var(--HovMediumCarmine);
+  }

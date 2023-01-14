@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/style.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <section class="top-header">
+        <section class="client-connexion">     
+            <a href="#">Connexion</a><pre>/</pre><a href="#">Inscription</a>
+        </section>
+        <section class="barre-recherche">
+              <div class="icone-fleche-bas"><img src="../../public/css/img/down.png" alt="icone-fleche-bas"></div>
+              <label for="barre-recherche" name="search">
+                <input type="text">
+              </label>
+              <div class="icone-recherche"><img src="../../public/css/img/search.png" alt="icone rechercher"></div>
+        </section>
+      </section>
+      <header>
+        <div class="header-logo-container">
+            <img src="../../public/css/img/LS-logo.png" alt="">
+        </div>
+        <nav class="navigation-principal">
+            <a href="#">Acceuil</a>
+            <a href="#">Actualité</a>
+            <div class="dropdown">
+                <button class="dropbtn">Collection</button>
+                <div class="dropdown-content">
+                  <a href="#">2ième guerre mondiale</a>
+                  <a href="#">Les icones Americaines</a>
+                  <a href="#">La reine Elizabeth</a>
+                  <a href="#">British board of education</a>
+                  <a href="#">...</a>
+                </div>
+              </div>
+                      
+            <div class="dropdown">
+                <button class="dropbtn">À propos</Contactez-nous></button>
+                <div class="dropdown-content">
+                  <a href="#">Gallery</a>
+                  <a href="#">Archives</a>
+                  <a href="#">Historique</a>
+                  <a href="#">Qui sommes-nous?</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Contactez-nous</button>
+                <div class="dropdown-content">
+                  <a href="#">Téléphone</a>
+                  <a href="#">Courriel</a>
+                  <a href="#">Aide rapide</a>
+                </div>
+              </div>  
+        </nav>
+        </header>
+        <main>
+          {% block body %}
+          {% endblock %}
+        </main>
+        <footer>
+          <div class="footer-droite">
+            <div class="footer-logo">
+              <img src="../../public/css/img/LS-logo.png" alt="">
+            </div>
+            <div class="nav-social">
+              <a href="#"><img src="../../public/css/img/twitter.png" alt=""></a>
+              <a href="#"><img src="../../public/css/img/facebook.png" alt=""></a>
+            </div>
+          </div>
+    
+          <div class="footer-centre">
+            <div class="footer-el">
+              <h6>Contact</h6>
+              <span>&#128383; <a href="tel:+"> 514-777-7777</a></span>
+              <span>&#128387; <a href="mailto:"> LS-Auctions@gmail.com</a></span>
+              <span>&#127986; <a href="#"> 777 Boul Pie-IX, Montréal(QC), H1W1W1</a></span>
+            </div>
+            <div class="footer-el">
+              <h6>Archives</h6>
+              <span> <a href="#">- Une passion familiale</a></span>
+              <span> <a href="#">- Les enchères les plus palpitants</a></span>
+              <span> <a href="#">- Nos partenaires</a></span>
+            </div>
+          </div>
+          
+          <div class="footer-gauche">
+            <div>
+              <h6>Localisation :</h6>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.998200734919!2d-73.54488668514671!3d45.55036173571218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b89e127551b%3A0xa8bb441b5b51f75f!2s2050%20Pie-IX%20Blvd%2C%20Montreal%2C%20QC%20H1V%203T6!5e0!3m2!1sen!2sca!4v1671645171539!5m2!1sen!2sca" width="125" height="125" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="select-langue">
+              <label for="langue" name="`langue">
+                <select>
+                  <option value="francais">Français</option>
+                  <option value="anglais">Anglais</option>
+                  <option value="espagnol">Espagnol</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          </footer>
+          <section class="footer-bas">
+            <span>©2022 Copyright: LS-Stamps.com</span> 
+          </section>
+</body>
+</html>

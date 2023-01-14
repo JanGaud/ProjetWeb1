@@ -1,0 +1,25 @@
+.carrousel{
+    margin-top: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.carrousel{
+    position: relative;
+    width:  100%;
+    object-fit: contain;
+}
+
+.carrousel>img{
+    width: 100%;
+    height: auto;
+}
+
+.banner-nav{
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

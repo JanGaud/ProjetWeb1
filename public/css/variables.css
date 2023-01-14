@@ -1,0 +1,22 @@
+:root {
+
+    /*Main colors*/
+    --MaximumBluePurple: #9da8da;
+    --Ivory: #f7fbf0;
+    --MediumCarmine: #b93c3c;
+    --Xiketic: #211A26;
+    --BlueRYB: #364bdf;
+
+   
+
+    /*Hover colors*/
+    --HovMediumCarmine: #c75353;
+    --HovBlueRYB: #4e59ad;
+
+    /*transparance*/
+    --TransBlueRYB: #364adfaf;
+    --TransMediumCarmine: #b93c3c7c;
+    --TransXiketic: #211a26e1;
+    --GrisTrans: rgba(128, 128, 128, 0.199);
+
+  }

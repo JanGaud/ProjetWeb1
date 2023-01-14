@@ -1,0 +1,109 @@
+.liens-images{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liens-rapides{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.liens-rapides{
+    min-width: 375px;
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*Changement de direction des liens de la page d'acceuil*/
+.liens-rapides-acceuil{
+    flex-direction: row-reverse;
+}
+
+.boite-lien{
+    height: 125px;
+    width: 170px;
+    background-color: var(--Xiketic);
+}
+
+.cadre-img{
+    background-color: black;
+    min-width: 260px;
+    width: 40%;
+    height: 340px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.cadre-img>img{
+    opacity: 0.6;
+    min-height: 100%;
+}
+
+.cadre-img>h1{
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* .Ajout dimage dans les liens*/
+
+.monarchie{
+    background-image: url("/css/img/liens-Elizabeth-Stamp.jpg");
+}
+
+.default{
+    background-image: url("/css/img/Rare-plane.jpg");
+}
+
+.deuxiemeGuerre{
+    background-image: url("/css/img/liens-wwII-stamp.jpg");
+}
+
+.rares{
+    background-image: url("/css/img/liens-rare.jpg");
+}
+
+.monde{
+    background-image: url("/css/img/lien-worlwide.jpg");
+}
+
+.approuve{
+    background-image: url("/css/img/lien-approved.jpg");
+}
+
+/* .Ajout dimage dans les liens de la page d'acceuil*/
+
+
+
+.catalogue{
+    background-image: url("/css/img/liens-catalogue.jpg");
+}
+
+.collections{
+    background-image: url("/css/img/liens-collections.jpeg");
+}
+
+.a-propos{
+    background-image: url("/css/img/liens-apropos.jpg");
+}
+
+.contact{
+    background-image: url("/css/img/liens-contact.jpg");
+}
+
+.en-direct{
+    background-image: url("/css/img/liens-firect.jpg");
+}
+
+.historique{
+    background-image: url("/css/img/liens-actualite.jpg");
+}

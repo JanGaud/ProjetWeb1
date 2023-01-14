@@ -1,0 +1,19 @@
+/*https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp*/
+
+* {box-sizing: border-box;}
+
+.infos-carte-img {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 5px solid rgba(0, 0, 0, 0.253);
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 125px;
+  height: 125px;
+}
+
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_magnifier_glass*/
