@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="main-block">
-    <h4>Inscription</h4>
+    <h1>Inscription</h1>
     <form action="post">      
       <label id="icon" for="emailU"><i class="fas fa-envelope"></i></label>
       <input type="email" name="emailU" id="emailU" placeholder="Adresse courriel" required/> 
@@ -16,12 +16,17 @@
       <label id="icon" for="lastNameU"><i class="fas fa-user"></i></label>
       <input type="text" name="lastNameU" id="lastNameU" placeholder="Nom" required/>
 
+      <label id="icon" for="phoneU"><i class="fas fa-phone"></i></label>
+      <input type="tel" name="phoneU" id="phoneU" placeholder="Téléphone" required/>
+
       <label id="icon" for="passwordU"><i class="fas fa-unlock-alt"></i></label>
       <input type="password" name="passwordU" id="passwordU" placeholder="Mot de passe" required/>
 
+      <hr>  
       <div class="btn-block">
         <button class="btns-actions" type="submit" href="/">Confirmer</button>
       </div>
+
     </form>
   </div>
 

@@ -1,26 +1,30 @@
 .main-block {
-max-width: 340px; 
-height: 550px; 
+width: 400px;
+height: fit-content; 
 padding: 10px 0;
 margin: auto;
 border-radius: 5px; 
-border: solid 1px #ccc;
 box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.192); 
 background-image: url("../css/img/form-envelope-img.jpg");
 }
+
 form {
 margin: 0 30px;
 }
+
 .account-type, .gender {
 margin: 15px 0;
 }
+
 input[type=radio] {
 display: none;
 }
+
 label#icon {
 margin: 0;
 border-radius: 5px 0 0 5px;
 }
+
 label.radio {
 position: relative;
 display: inline-block;
@@ -30,6 +34,7 @@ text-indent: 30px;
 overflow: visible;
 cursor: pointer;
 }
+
 label.radio:before {
 content: "";
 position: absolute;
@@ -40,6 +45,7 @@ height: 20px;
 border-radius: 50%;
 background: var(--Xiketic);
 }
+
 label.radio:after {
 content: "";
 position: absolute;
@@ -53,22 +59,27 @@ border-right: none;
 transform: rotate(-45deg);
 opacity: 0;
 }
+
 input[type=radio]:checked + label:after {
 opacity: 1;
 }
-input[type=text], input[type=password], input[type=email]{
+
+input[type=text], input[type=password], input[type=email], input[type=tel]{
+font-family: 'Caveat', cursive;
+outline: none;
+font-size: 23px;
 width: calc(100% - 57px);
 height: 36px;
 margin: 13px 0 0 -5px;
 padding-left: 10px; 
-border-radius: 0 5px 5px 0;
-border: solid 1px #cbc9c9; 
-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-background: #fff; 
+border: none; 
+background: transparent; 
 }
+
 input[type=password] {
 margin-bottom: 15px;
 }
+
 #icon {
 display: inline-block;
 padding: 9.3px 15px;
@@ -77,6 +88,7 @@ background: var(--Xiketic);
 color: #fff;
 text-align: center;
 }
+
 .btn-block{
     display: flex;
     justify-content: center;
