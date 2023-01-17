@@ -24,7 +24,7 @@
 
 .icone-recherche{
     position: absolute;
-    bottom: 1px;
+    bottom: 0px;
     left: 335px;
     width: 25px;
     height: 25px;
@@ -38,8 +38,8 @@
 .icone-fleche-bas{
     width: 25px;
     height: 25px;
+    bottom: 0;
     object-fit: contain;
     position: absolute;
-    top: 2px;
     left: 2px;
 }

@@ -40,4 +40,6 @@ class Config
      */
     const SHOW_ERRORS = true;
 
+    const URL_RACINE = "http://";
+
 }
