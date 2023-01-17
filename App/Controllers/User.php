@@ -31,7 +31,7 @@ class User extends \Core\Controller
         View::renderTemplate('User/inscription.html', ["user"=>$user]);
     }
 
-    public function postAction(){
+    public function inscriptionPostAction(){
         $user = new UserModel();
         $user->setPrenom($_REQUEST['firstNameU']);
         $user->setNom($_REQUEST['lastNameU']);

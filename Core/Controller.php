@@ -1,6 +1,8 @@
 <?php
-
 namespace Core;
+
+// require("App/Config.php");
+
 
 /**
  * Base controller
@@ -10,6 +12,7 @@ namespace Core;
 abstract class Controller
 {
 
+    protected $url_racine;
     /**
      * Parameters from the matched route
      * @var array
@@ -24,8 +27,9 @@ abstract class Controller
      * @return void
      */
     public function __construct($route_params)
-    {
+    {    
         $this->route_params = $route_params;
+        // $this->url_racine = Config::URL_RACINE;
     }
 
     /**
@@ -70,4 +74,5 @@ abstract class Controller
     protected function after()
     {
     }
+
 }
