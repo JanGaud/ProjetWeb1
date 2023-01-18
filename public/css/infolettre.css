@@ -16,7 +16,7 @@
 }
 
 .infolettre-formulaire{
-    background-image: url("/css/img/infolettre-img.jpg");
+    background-image: url("../css/img/infolettre-img.jpg");
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.155);
     padding: 20px;
     border-radius: 10px;

@@ -31,6 +31,12 @@ class User extends \Core\Controller
         View::renderTemplate('User/inscription.html', ["user"=>$user]);
     }
 
+    public function connexionAction()
+    {      
+        $user = Model::getAll();
+        View::renderTemplate('User/connexion.html', ["user"=>$user]);
+    }
+
     public function inscriptionPostAction(){
         $user = new UserModel();
         $user->setPrenom($_REQUEST['firstNameU']);

@@ -57,27 +57,27 @@
 /* .Ajout dimage dans les liens*/
 
 .monarchie{
-    background-image: url("/css/img/liens-Elizabeth-Stamp.jpg");
+    background-image: url("../css/img/liens-Elizabeth-Stamp.jpg");
 }
 
 .default{
-    background-image: url("/css/img/Rare-plane.jpg");
+    background-image: url("../css/img/Rare-plane.jpg");
 }
 
 .deuxiemeGuerre{
-    background-image: url("/css/img/liens-wwII-stamp.jpg");
+    background-image: url("../css/img/liens-wwII-stamp.jpg");
 }
 
 .rares{
-    background-image: url("/css/img/liens-rare.jpg");
+    background-image: url("../css/img/liens-rare.jpg");
 }
 
 .monde{
-    background-image: url("/css/img/lien-worlwide.jpg");
+    background-image: url("../css/img/lien-worlwide.jpg");
 }
 
 .approuve{
-    background-image: url("/css/img/lien-approved.jpg");
+    background-image: url("../css/img/lien-approved.jpg");
 }
 
 /* .Ajout dimage dans les liens de la page d'acceuil*/
@@ -85,25 +85,25 @@
 
 
 .catalogue{
-    background-image: url("/css/img/liens-catalogue.jpg");
+    background-image: url("../css/img/liens-catalogue.jpg");
 }
 
 .collections{
-    background-image: url("/css/img/liens-collections.jpeg");
+    background-image: url("../css/img/liens-collections.jpeg");
 }
 
 .a-propos{
-    background-image: url("/css/img/liens-apropos.jpg");
+    background-image: url("../css/img/liens-apropos.jpg");
 }
 
 .contact{
-    background-image: url("/css/img/liens-contact.jpg");
+    background-image: url("../css/img/liens-contact.jpg");
 }
 
 .en-direct{
-    background-image: url("/css/img/liens-firect.jpg");
+    background-image: url("../css/img/liens-firect.jpg");
 }
 
 .historique{
-    background-image: url("/css/img/liens-actualite.jpg");
+    background-image: url("../css/img/liens-actualite.jpg");
 }
