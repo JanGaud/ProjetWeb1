@@ -37,6 +37,12 @@ class User extends \Core\Controller
         View::renderTemplate('User/connexion.html', ["user"=>$user]);
     }
 
+    public function creationAction()
+    {      
+        $user = Model::getAll();
+        View::renderTemplate('User/creationEnchere.html', ["user"=>$user]);
+    }
+
     public function inscriptionPostAction(){
         $user = new UserModel();
         $user->setPrenom($_REQUEST['firstNameU']);
