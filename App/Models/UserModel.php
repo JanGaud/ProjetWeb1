@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 enum Privilege:int{
     case Membre = 1;
     case Vendeur = 2;
@@ -16,8 +17,6 @@ class UserModel
     private $phone;
     private $password;
 
-
-    
 
     /**
      * Get the value of password

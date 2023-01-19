@@ -27,7 +27,8 @@ class User extends \Core\Model
     public static function create(UserModel $user, $privilege)
     {
         $db = static::getDB();
-        $sql = "INSERT INTO User (firstNameU, lastNameU, phoneU, emailU, passwordU, Privileges_idPrivileges) VALUES (:firstNameU, :lastNameU, :phoneU, :emailU, :passwordU, :Privileges_idPrivileges)";
+        $sql = "INSERT INTO User (firstNameU, lastNameU, phoneU, emailU, passwordU, Privileges_idPrivileges)    
+                VALUES (:firstNameU, :lastNameU, :phoneU, :emailU, :passwordU, :Privileges_idPrivileges)";
 
         $stmt = $db->prepare($sql);
         $stmt->bindValue(":firstNameU", $user->getPrenom());
@@ -41,4 +42,5 @@ class User extends \Core\Model
             print_r($stmt->errorInfo());
         }
     }
+
 }

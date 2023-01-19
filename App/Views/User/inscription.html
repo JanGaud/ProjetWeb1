@@ -6,6 +6,11 @@
 
 <div class="main-block">
     <h1>Inscription</h1>
+    
+    {% if erreur %}
+    <p>{{ erreur }}</p>
+    {% endif %}
+
     <form action="inscriptionPost" method="post">      
       <label id="icon" for="emailU"><i class="fas fa-envelope"></i></label>
       <input type="email" name="emailU" id="emailU" placeholder="Adresse courriel" required/> 

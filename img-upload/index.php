@@ -13,6 +13,11 @@
     <title>img-upload</title>
 </head>
 <body>
+
+<?php if (isset($_GET['error']));?>
+    <p><?= $_GET['error']; ?></p>
+<?php endif ?>
+
     <form method="post" 
           action="upload.php"
           enctype="multipart/form-data">

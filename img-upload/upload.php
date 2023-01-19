@@ -1,7 +1,8 @@
 <?php
 
+
     if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
-        include "";
+        // include "";
         echo "<pre>";
             print_r($_FILES['my_image']);
         echo "</pre>";
@@ -28,7 +29,8 @@
                     move_uploaded_file($tmp_name, $img_upload_path);
 
                     // Insérer dans la base de donnée
-
+                    $sql = "INSERT INTO images(imageUrl) 
+                            VALUES('$new_img_name')";
 
                 }else {
                     $em = "Vous ne pouvez pas télécharger des fichiers de ce type.";

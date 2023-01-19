@@ -5,7 +5,9 @@ namespace App\Controllers;
 use App\Models\Privilege;
 use App\Models\User as Model;
 use App\Models\UserModel;
+use App\Services\Login;
 use \Core\View;
+use Exception;
 
 /**
  * Home controller
@@ -44,14 +46,35 @@ class User extends \Core\Controller
     }
 
     public function inscriptionPostAction(){
+        
         $user = new UserModel();
         $user->setPrenom($_REQUEST['firstNameU']);
         $user->setNom($_REQUEST['lastNameU']);
         $user->setEmail($_REQUEST['emailU']);
         $user->setPassword(password_hash($_REQUEST['passwordU'], PASSWORD_DEFAULT));
         $user->setPhone($_REQUEST['phoneU']);
-        Model::create($user, Privilege::Membre->value);
+        
+            try {
+                Model::create($user, Privilege::Membre->value);
+                Login::loginUser($user, Privilege::Membre);
+            } 
+            catch (Exception $e) {
+                $error = "L'adresse courriel existe déjà!";
+                View::renderTemplate("User/inscription.html", ['erreur' => $error]);
+            }
+            
 
-        View::renderTemplate('User/index.html');
+        View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+    }
+
+    public function logoutAction(){               
+        try {
+            Login::logoutUser();  
+        } 
+        catch (Exception $e) {
+
+        }
+        header("Location: /ProjetWeb1/public/Home/index");
+
     }
 }
