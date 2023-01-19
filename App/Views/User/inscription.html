@@ -8,7 +8,9 @@
     <h1>Inscription</h1>
     
     {% if erreur %}
-    <p>{{ erreur }}</p>
+    <div class="error-bubble">
+       <p>{{ erreur }}</p>
+    </div>
     {% endif %}
 
     <form action="inscriptionPost" method="post">      

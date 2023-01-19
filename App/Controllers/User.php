@@ -57,14 +57,12 @@ class User extends \Core\Controller
             try {
                 Model::create($user, Privilege::Membre->value);
                 Login::loginUser($user, Privilege::Membre);
+                View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
             } 
             catch (Exception $e) {
                 $error = "L'adresse courriel existe déjà!";
                 View::renderTemplate("User/inscription.html", ['erreur' => $error]);
-            }
-            
-
-        View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+            }   
     }
 
     public function logoutAction(){               
@@ -74,7 +72,7 @@ class User extends \Core\Controller
         catch (Exception $e) {
 
         }
-        header("Location: /ProjetWeb1/public/Home/index");
+        header("Location:/ProjetWeb1/public/Home/index");
 
     }
 }

@@ -1,0 +1,14 @@
+.error-bubble{
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding: 1px;
+    background-color:rgba(255, 0, 0, 0.436);
+    border-radius: 5px;
+}
+
+.error-bubble>p{
+    color: white;
+    margin: 0;
+    padding: 5px;
+}
