@@ -1,4 +1,5 @@
 .error-bubble{
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
@@ -8,7 +9,7 @@
 }
 
 .error-bubble>p{
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 0;
-    padding: 5px;
+    padding: 7px;
 }

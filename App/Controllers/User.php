@@ -65,6 +65,33 @@ class User extends \Core\Controller
             }   
     }
 
+
+    public function connexionPostAction(){
+       $mail = $_REQUEST['emailU'];
+       $pw = $_REQUEST['passwordU'];
+       $user = Model::getUser($mail);
+
+       if($user){
+        //authentifier le mot de passe
+        $hash = $user->getPassword();
+        if(password_verify($pw, $hash)){
+            //connecter l'utilisateur
+            Login::loginUser($user, Privilege::Membre);
+            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+        }
+        else{
+            $error = "Le mot de passe entré ne correspond pas à celui attendu!";
+                View::renderTemplate("User/connexion.html", ['erreur' => $error]);
+        }
+       }
+       else{
+        //message d'erreur
+        $error = "L'adresse courriel n'est pas dans notre base de donnée!";
+                View::renderTemplate("User/connexion.html", ['erreur' => $error]);
+       }
+
+    }
+
     public function logoutAction(){               
         try {
             Login::logoutUser();  

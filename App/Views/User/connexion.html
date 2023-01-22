@@ -6,7 +6,14 @@
 
 <div class="main-block">
     <h1>Connexion</h1>
-    <form action="inscriptionPost" method="post">      
+
+    {% if erreur %}
+    <div class="error-bubble">
+       <p>{{ erreur }}</p>
+    </div>
+    {% endif %}
+    
+    <form action="connexionPost" method="post">      
       <label id="icon" for="emailU"><i class="fas fa-envelope"></i></label>
       <input type="email" name="emailU" id="emailU" placeholder="Adresse courriel" required/> 
 

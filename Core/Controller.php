@@ -1,7 +1,6 @@
 <?php
 namespace Core;
-
-// require("App/Config.php");
+use App\Config;
 
 
 /**
@@ -29,7 +28,7 @@ abstract class Controller
     public function __construct($route_params)
     {    
         $this->route_params = $route_params;
-        // $this->url_racine = Config::URL_RACINE;
+        $this->url_racine = Config::URL_RACINE;
     }
 
     /**
