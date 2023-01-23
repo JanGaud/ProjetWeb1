@@ -1,7 +1,7 @@
 <?php
 
 namespace Core;
-
+use App\Services\Login;
 /**
  * View
  *
@@ -48,6 +48,7 @@ class View
             $twig = new \Twig\Environment($loader);
         }
 
+        $twig->addGlobal('connected', Login::isLogged());
         echo $twig->render($template, $args);
     }
 }

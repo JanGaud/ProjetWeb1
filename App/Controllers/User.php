@@ -77,7 +77,8 @@ class User extends \Core\Controller
         if(password_verify($pw, $hash)){
             //connecter l'utilisateur
             Login::loginUser($user, Privilege::Membre);
-            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                    "lastName"=>Login::getUser()->getNom()]);
         }
         else{
             $error = "Le mot de passe entré ne correspond pas à celui attendu!";
@@ -90,6 +91,14 @@ class User extends \Core\Controller
                 View::renderTemplate("User/connexion.html", ['erreur' => $error]);
        }
 
+    }
+
+    public function indexAccountAction(){
+        if(Login::isLogged()){
+            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+        }else{
+            View::renderTemplate("User/connexion.html"); 
+        }
     }
 
     public function logoutAction(){               

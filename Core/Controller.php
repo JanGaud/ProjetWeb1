@@ -1,7 +1,7 @@
 <?php
 namespace Core;
 use App\Config;
-
+use App\Services\Login;
 
 /**
  * Base controller
@@ -63,6 +63,10 @@ abstract class Controller
      */
     protected function before()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
     }
 
     /**

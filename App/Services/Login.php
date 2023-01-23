@@ -15,11 +15,14 @@ class Login{
 
 
     public static function logoutUser(){
-            session_destroy(); 
+            session_destroy();
     }
 
 
     public static function isLogged(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        } 
         if (isset($_SESSION['compteActif'])) {
             return $_SESSION['compteActif'];
         }

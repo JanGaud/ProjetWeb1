@@ -9,7 +9,26 @@
 </head>
 <body>
 
-  {% if %}
+  {% if connected %}
+    <section class="top-header">
+      <section class="client-connexion">     
+          <a href="logout">Déconnexion</a> 
+          <small>Bienvenue &nbsp {{ firstName }} {{ lastName }}</small>
+      </section>
+      <section class="notifications-utilisateur">
+          <button><img src="../../public/css/img/user.png" alt="utilisateur"></button>
+          <button><img src="../../public/css/img/active.png" alt="notifications"></button>
+      </section>
+      <section class="barre-recherche">
+            <div class="icone-fleche-bas"><img src="../../public/css/img/down.png" alt="icone-fleche-bas"></div>
+            <label for="barre-recherche" name="search">
+              <input type="text">
+            </label>
+            <div class="icone-recherche"><img src="../../public/css/img/search.png" alt="icone rechercher"></div>
+      </section>
+    </section>
+
+  {% else %}
       <section class="top-header">
         <section class="client-connexion">     
             <a href="http://localhost/ProjetWeb1/public/User/Connexion">Connexion</a><pre>/</pre><a       
@@ -21,25 +40,6 @@
                 <input type="text">
               </label>
               <div class="icone-recherche"><img src="../../public/css/img/search.png" alt="icone rechercher"></div>
-        </section>
-      </section>
-
-    {% elseif %}
-      <section class="top-header">
-        <section class="client-connexion">     
-            <a href="#">Déconnexion</a> 
-            <small>Bienvenue Nicolas Cage</small>
-        </section>
-        <section class="notifications-utilisateur">
-            <button><img src="/css/img/user.png" alt="utilisateur"></button>
-            <button><img src="/css/img/active.png" alt="notifications"></button>
-        </section>
-        <section class="barre-recherche">
-              <div class="icone-fleche-bas"><img src="/css/img/down.png" alt="icone-fleche-bas"></div>
-              <label for="barre-recherche" name="search">
-                <input type="text">
-              </label>
-              <div class="icone-recherche"><img src="/css/img/search.png" alt="icone rechercher"></div>
         </section>
       </section>
     {% endif %}
