@@ -45,6 +45,12 @@ class User extends \Core\Controller
         View::renderTemplate('User/creationEnchere.html', ["user"=>$user]);
     }
 
+    public function ModificationUserAction()
+    {      
+        $user = Model::getAll();
+        View::renderTemplate('User/modificationUser.html', ["user"=>$user]);
+    }
+
     public function inscriptionPostAction(){
         
         $user = new UserModel();
@@ -109,6 +115,5 @@ class User extends \Core\Controller
 
         }
         header("Location:/ProjetWeb1/public/Home/index");
-
     }
 }
