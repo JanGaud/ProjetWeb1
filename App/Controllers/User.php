@@ -46,9 +46,14 @@ class User extends \Core\Controller
     }
 
     public function ModificationUserAction()
-    {      
+    {   
+        if(Login::getPrivilege()!= Privilege::$Membre){
+            View::renderTemplate("403.html"); 
+        }
+        else{
         $user = Model::getAll();
         View::renderTemplate('User/modificationUser.html', ["user"=>$user]);
+        }
     }
 
     public function inscriptionPostAction(){
@@ -61,8 +66,8 @@ class User extends \Core\Controller
         $user->setPhone($_REQUEST['phoneU']);
         
             try {
-                Model::create($user, Privilege::Membre->value);
-                Login::loginUser($user, Privilege::Membre);
+                Model::create($user, Privilege::$Membre);
+                Login::loginUser($user, Privilege::$Membre);
                 View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
             } 
             catch (Exception $e) {
@@ -82,7 +87,7 @@ class User extends \Core\Controller
         $hash = $user->getPassword();
         if(password_verify($pw, $hash)){
             //connecter l'utilisateur
-            Login::loginUser($user, Privilege::Membre);
+            Login::loginUser($user, Privilege::$Membre);
             View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
                                                     "lastName"=>Login::getUser()->getNom()]);
         }

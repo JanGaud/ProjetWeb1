@@ -14,9 +14,9 @@
 </head>
 <body>
 
-<?php if (isset($_GET['error']));?>
+<?php if (isset($_GET['error'])){;?>
     <p><?= $_GET['error']; ?></p>
-<?php endif ?>
+<?php }?>
 
     <form method="post" 
           action="upload.php"

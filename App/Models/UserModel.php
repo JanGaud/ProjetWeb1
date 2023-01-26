@@ -110,4 +110,5 @@ class UserModel
 
         return $this;
     }
+
 }

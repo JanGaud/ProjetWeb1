@@ -7,7 +7,7 @@ use App\Models\UserModel;
 
 class Login{
 
-    public static function loginUser(UserModel $user, Privilege $privilege){
+    public static function loginUser(UserModel $user, $privilege){
         $_SESSION['compteActif'] = true;
         $_SESSION['utilisateur'] = $user;
         $_SESSION['privilege'] = $privilege;
