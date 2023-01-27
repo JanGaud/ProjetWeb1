@@ -5,28 +5,33 @@
 {% block body %}
 
 <div class="main-block">
-    <h1>Création d'enchère</h1>
-    <form action="inscriptionPost" method="post">      
-      <label id="icon" for="emailU"><i class="fas fa-envelope"></i></label>
-      <input type="email" name="emailU" id="emailU" placeholder="Adresse courriel" required/> 
+    <h1>Creation d'enchere</h1>
+    
+    <form class="ajout-enchere" method="post" action="upload.php" enctype="multipart/form-data">
 
-      <label id="icon" for="passwordU"><i class="fas fa-unlock-alt"></i></label>
-      <input type="password" name="passwordU" id="passwordU" placeholder="Mot de passe" required/>
+    <label for="image"><input type="file" name="my_image"></label>
 
-      <hr>  
-      <div class="btn-block">
-        <button class="btns-actions" type="submit" href="/">Confirmer</button>
-      </div>
-      <hr>
-        <h4>Connexion rapide</h4>
-        <div class="inscription-social">
-            <a href="#" class="fa fa-facebook"> Facebook</a>
-            <a href="#" class="fa fa-twitter"> Twitter</a>
-            <a href="#" class="fa fa-instagram"> Instagram</a>
-            <a href="#" class="fa fa-google"> G-mail</a>
-        </div>
+    <label for="titreTimbre">Titre du timbre<input type="titre" name="titreTimbre"></label>
 
-        <hr>
+    <label for="descriptionTimbre">Description<input type="text" name="descriptionTimbre"></label>
+
+    <label for="quality">Qualité de l'article:
+        <select name="quality" id="quality">
+        <option value="Parfaite">Parfaite</option>
+        <option value="Medium">Medium</option>
+        <option value="Medium/Basse">Medium/Basse</option>
+        <option value="Basse">Basse</option>
+      </select>
+    </label>
+
+    <label for="dateStart">Début<input type="date" name="dateStart"></label>
+
+    <label for="dateEnd">Fin<input type="date" name="dateEnd"></label>
+
+    <label for="startPrice">Prix initial<input type="number" name="startPrice"></label>
+
+    <input type="submit" name="submit" value="Upload">
+
     </form>
   </div>
 

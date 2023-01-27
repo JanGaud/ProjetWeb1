@@ -68,7 +68,8 @@ class User extends \Core\Controller
             try {
                 Model::create($user, Privilege::$Membre);
                 Login::loginUser($user, Privilege::$Membre);
-                View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+                View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                        "lastName"=>Login::getUser()->getNom()]);
             } 
             catch (Exception $e) {
                 $error = "L'adresse courriel existe déjà!";
@@ -106,7 +107,8 @@ class User extends \Core\Controller
 
     public function indexAccountAction(){
         if(Login::isLogged()){
-            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                    "lastName"=>Login::getUser()->getNom()]);
         }else{
             View::renderTemplate("User/connexion.html"); 
         }
