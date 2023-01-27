@@ -22,4 +22,10 @@ class Home extends \Core\Controller
         $user = User::getAll();
         View::renderTemplate('Home/index.html');
     }
+
+    public function catalogueAction()
+    {      
+        $user = User::getAll();
+        View::renderTemplate('catalogue.html');
+    }
 }
