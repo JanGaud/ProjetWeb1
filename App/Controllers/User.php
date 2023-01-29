@@ -39,12 +39,6 @@ class User extends \Core\Controller
         View::renderTemplate('User/connexion.html', ["user"=>$user]);
     }
 
-    public function creationAction()
-    {      
-        $user = Model::getAll();
-        View::renderTemplate('User/creationEnchere.html', ["user"=>$user]);
-    }
-
     public function ModificationUserAction()
     {   
         if(Login::getPrivilege()!= Privilege::$Membre){
@@ -66,13 +60,14 @@ class User extends \Core\Controller
         $user->setPhone($_REQUEST['phoneU']);
         
             try {
-                Model::create($user, Privilege::$Membre);
+                $idU = Model::create($user, Privilege::$Membre);
+                $user->setIdU($idU);
                 Login::loginUser($user, Privilege::$Membre);
                 View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
                                                         "lastName"=>Login::getUser()->getNom()]);
             } 
             catch (Exception $e) {
-                $error = "L'adresse courriel existe déjà!";
+                $error = $e->getMessage();
                 View::renderTemplate("User/inscription.html", ['erreur' => $error]);
             }   
     }

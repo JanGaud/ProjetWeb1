@@ -4,6 +4,7 @@ namespace App\Models;
 
 class UserModel
 {
+    private $idU;
     private $nom;
     private $prenom;
     private $email;
@@ -111,4 +112,24 @@ class UserModel
         return $this;
     }
 
+
+    /**
+     * Get the value of idU
+     */ 
+    public function getIdU()
+    {
+        return $this->idU;
+    }
+
+    /**
+     * Set the value of idU
+     *
+     * @return  self
+     */ 
+    public function setIdU($idU)
+    {
+        $this->idU = $idU;
+
+        return $this;
+    }
 }

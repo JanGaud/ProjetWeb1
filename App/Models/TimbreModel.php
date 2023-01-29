@@ -2,37 +2,17 @@
 
 namespace App\Models;
 
-class EnchereModel
+class TimbreModel
 {
-    private UserModel $auteur;
+    private $userId;
     private $prixInit;
     private $titre;
     private $description;
+    private $quality;
     private $debut;
     private $fin;
     private $image;
     private $bids = [];
-
-
-    /**
-     * Get the value of auteur
-     */ 
-    public function getAuteur()
-    {
-        return $this->auteur;
-    }
-
-    /**
-     * Set the value of auteur
-     *
-     * @return  self
-     */ 
-    public function setAuteur($auteur)
-    {
-        $this->auteur = $auteur;
-
-        return $this;
-    }
 
     /**
      * Get the value of prixInit
@@ -170,6 +150,46 @@ class EnchereModel
     public function setBids($bids)
     {
         $this->bids = $bids;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of quality
+     */ 
+    public function getQuality()
+    {
+        return $this->quality;
+    }
+
+    /**
+     * Set the value of quality
+     *
+     * @return  self
+     */ 
+    public function setQuality($quality)
+    {
+        $this->quality = $quality;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of userId
+     */ 
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set the value of userId
+     *
+     * @return  self
+     */ 
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
 
         return $this;
     }

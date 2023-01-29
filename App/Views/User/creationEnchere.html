@@ -6,14 +6,19 @@
 
 <div class="main-block">
     <h1>Creation d'enchere</h1>
+    {% if erreur %}
+    <div class="error-bubble">
+       <p>{{ erreur }}</p>
+    </div>
+    {% endif %}
     
-    <form class="ajout-enchere" method="post" action="upload.php" enctype="multipart/form-data">
+    <form class="ajout-enchere" method="post" action="encherePost" enctype="multipart/form-data">
 
-    <label for="image"><input type="file" name="my_image"></label>
+    <label for="image"><input type="file" accept="image/png, image/jpeg" name="my_image"></label>
 
-    <label for="titreTimbre">Titre du timbre<input type="titre" name="titreTimbre"></label>
+    <label for="titreTimbre">Titre du timbre<input type="text" name="titreTimbre"></label>
 
-    <label for="descriptionTimbre">Description<input type="text" name="descriptionTimbre"></label>
+    <label for="descriptionTimbre">Description <textarea name="descriptionTimbre" id="" cols="30" rows="10"></textarea></label>
 
     <label for="quality">Qualité de l'article:
         <select name="quality" id="quality">

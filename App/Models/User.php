@@ -49,6 +49,7 @@ class User extends \Core\Model
             $user->setNom($result['lastNameU']);
             $user->setPhone($result['phoneU']);
             $user->setPassword($result['passwordU']);
+            $user->setIdU($result['idUser']);
             return $user;
         }
         //Retourne null si le courriel n'est pas trouve
@@ -69,9 +70,12 @@ class User extends \Core\Model
         $stmt->bindValue(":passwordU", $user->getPassword());
         $stmt->bindValue(":phoneU", $user->getPhone());
         $stmt->bindValue(":Privileges_idPrivileges", $privilege);
-        if (!$stmt->execute()) {
+        if ($stmt->execute()) {
+            return $db->lastInsertId();
+        } else {
             print_r($stmt->errorInfo());
         }
     }
+
     
 }
