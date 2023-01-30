@@ -14,28 +14,29 @@
     
     <form class="ajout-enchere" method="post" action="encherePost" enctype="multipart/form-data">
 
-    <label for="image"><input type="file" accept="image/png, image/jpeg" name="my_image"></label>
+        <div><label for="image"><input type="file" accept="image/png, image/jpeg" name="my_image">
+        <div><img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt=""></div></label></div>
 
-    <label for="titreTimbre">Titre du timbre<input type="text" name="titreTimbre"></label>
+        <div><label for="titreTimbre">Titre du timbre:<input type="text" name="titreTimbre"></label></div>
 
-    <label for="descriptionTimbre">Description <textarea name="descriptionTimbre" id="" cols="30" rows="10"></textarea></label>
+        <div><label for="descriptionTimbre">Description:<textarea name="descriptionTimbre" id="" cols="30" rows="10"></textarea></label></div>
 
-    <label for="quality">Qualité de l'article:
-        <select name="quality" id="quality">
-        <option value="Parfaite">Parfaite</option>
-        <option value="Medium">Medium</option>
-        <option value="Medium/Basse">Medium/Basse</option>
-        <option value="Basse">Basse</option>
-      </select>
-    </label>
+        <div><label for="quality">Qualité:
+            <select name="quality" id="quality">
+            <option value="Parfaite">Parfaite</option>
+            <option value="Medium">Medium</option>
+            <option value="Medium/Basse">Medium/Basse</option>
+            <option value="Basse">Basse</option>
+          </select>
+        </label></div>
 
-    <label for="dateStart">Début<input type="date" name="dateStart"></label>
+        <div><label for="dateStart">Début:<input type="date" name="dateStart"></label></div>
 
-    <label for="dateEnd">Fin<input type="date" name="dateEnd"></label>
+        <div><label for="dateEnd">Fin:<input type="date" name="dateEnd"></label></div>
 
-    <label for="startPrice">Prix initial<input type="number" name="startPrice"></label>
+        <div><label for="startPrice">Prix initial:<input type="number" name="startPrice"></label></div>
 
-    <input type="submit" name="submit" value="Upload">
+        <div><input type="submit" name="submit" value="Upload"></div>
 
     </form>
   </div>
