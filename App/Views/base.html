@@ -16,7 +16,15 @@
           <a href="http://localhost/ProjetWeb1/public/User/ModificationUser"><small>Bienvenue &nbsp {{ firstName }} {{ lastName }}</small></a>
       </section>
       <section class="notifications-utilisateur">
-          <button><img src="../../public/css/img/user.png" alt="utilisateur"></button>
+        <div class="dropdown">
+          <button class="dropdown-btn btn-user"><img src="../../public/css/img/user.png" alt="utilisateur"></button>
+          <div class="dropdown-content">
+            <a href="http://localhost/ProjetWeb1/public/timbre/creation">Ajouter un enchère</a>
+            <a href="#">Vos favorits</a>
+            <a href="#">Les timbres aimés</a>
+            <a href="#">Historique</a>
+          </div>  
+        </div>
           <button><img src="../../public/css/img/active.png" alt="notifications"></button>
       </section>
       <section class="barre-recherche">
