@@ -61,7 +61,6 @@
     margin-right: 10px;
 }
 
-
 .carte-droite{
     display: flex;
     flex-direction: column;
@@ -76,10 +75,25 @@
     align-self: center;
  }
 
-.temps-restant{
+.countdown {
     display: flex;
+    padding: 20px;
+    justify-content: center;
     align-items: center;
-    margin-left: 10px;
-    gap: 10px;
+    justify-content: space-between;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+  
+#days, #hours, #minutes, #seconds {
+    width: 75px;
+    height: 75px;
+    margin-top: 50px;
+    border: 4px solid var(--MediumCarmine);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
