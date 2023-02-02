@@ -16,9 +16,13 @@ use Exception;
 class Timbre extends \Core\Controller{
 
     public function creationAction()
-    {      
+    {   
+        if(Login::isLogged()){   
         $user = Model::getAll();
         View::renderTemplate('User/creationEnchere.html', ["user"=>$user]);
+        }else{
+            View::renderTemplate("User/connexion.html"); 
+        };
     }
 
     public function encherePostAction(){

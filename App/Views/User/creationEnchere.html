@@ -14,31 +14,52 @@
     
     <form class="ajout-enchere" method="post" action="encherePost" enctype="multipart/form-data">
 
-        <div><label for="image"><input type="file" accept="image/png, image/jpeg" name="my_image">
-        <div><img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt=""></div></label></div>
+        <div><label for="image"><input type="file" accept="image/png, image/jpeg" required name="my_image" id="fileInput"></label></div>
+        <!-- <div><img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt=""></div> -->
 
-        <div><label for="titreTimbre">Titre du timbre:<input type="text" name="titreTimbre"></label></div>
+        <div>
+          <label for="titreTimbre"><input type="text" name="titreTimbre" required placeholder="Entrez le titre du timbre...">  
+           </label>
+        </div>
 
-        <div><label for="descriptionTimbre">Description:<textarea name="descriptionTimbre" id="" cols="30" rows="10"></textarea></label></div>
+        <div><label for="descriptionTimbre"><textarea name="descriptionTimbre" cols="30" 
+          rows="10" placeholder="Entrez une description du timbre..."></textarea></label>
+        </div>
 
-        <div><label for="quality">Qualité:
-            <select name="quality" id="quality">
-            <option value="Parfaite">Parfaite</option>
-            <option value="Medium">Medium</option>
-            <option value="Medium/Basse">Medium/Basse</option>
-            <option value="Basse">Basse</option>
-          </select>
-        </label></div>
+        <div>
+          <label for="quality">Condition:
+            <select name="quality" id="quality" required>
+              <option value="Parfaite">Parfaite</option>
+              <option value="Medium">Medium</option>
+              <option value="Medium/Basse">Medium/Basse</option>
+              <option value="Basse">Basse</option>
+            </select>
+          </label>
+        </div>
 
-        <div><label for="dateStart">Début:<input type="date" name="dateStart"></label></div>
+        <div><label for="startPrice">Prix initial:<input type="number" min="0" name="startPrice"></label></div>
 
-        <div><label for="dateEnd">Fin:<input type="date" name="dateEnd"></label></div>
+        <div class="form-date">
+          <label for="dateStart">Début:<input id="startDate" min="" type="date" name="dateStart"></label>
+          <label for="dateEnd">Fin:<input id="endDate" min="" type="date" name="dateEnd"></label>
+        </div>
 
-        <div><label for="startPrice">Prix initial:<input type="number" name="startPrice"></label></div>
-
-        <div><input type="submit" name="submit" value="Upload"></div>
+        <div><input class="btns-actions" type="submit" name="submit" value="Upload"></div>
 
     </form>
   </div>
+
+  <script>
+    const today = new Date();
+    document.getElementById("startDate").min = today.toISOString().split("T")[0];
+  
+    document.getElementById("startDate").addEventListener("input", function() {
+      const startDate = new Date(this.value);
+      const endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+      document.getElementById("endDate").min = endDate.toISOString().split("T")[0];
+    });
+
+  </script>
+
 
 {% endblock %}

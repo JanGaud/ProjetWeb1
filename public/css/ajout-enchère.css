@@ -1,8 +1,113 @@
+
 .ajout-enchere{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .ajout-enchere>div{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+input[type="file"]{
+    color: var(--MediumCarmine);
+    font-weight: bolder;
+}
+
+input::file-selector-button {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(250, 250, 250, 0.393);
+    box-shadow: inset 0px 2px 2px 2px rgba(0, 0, 0, 0.087);
+}
+
+input::file-selector-button:hover{
+    transition: 0.5s;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.724);
+}
+
+input::file-selector-button:active{
+        transition: 0.1s;
+        border-radius: 20px;
+        background-color: var(--HovMediumCarmine);
+}
+
+input[name="titreTimbre"]{
+    border: 0.5px solid rgba(0, 0, 0, 0.162);
+    width: 360px;
+    height: 50px;
+}
+
+.ajout-enchere textarea {
+    width: 360px;
+    height: 200px;
+    font-size: 20px;
+    font-family: 'Caveat', cursive;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.162);
+    resize: none;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+select {
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border: solid 1px rgba(0, 0, 0, 0.162);
+    font-family: 'Caveat', cursive;
+    appearance: none;
+    background-color: transparent;
+}
+  
+option {
+    padding: 10px;
+    background-color: var(--MediumCarmine);
+    color: white;
+}
+
+select:focus{
+    outline: none;
+}
+
+.form-date{
+    width: 360px;
     display: flex;
     justify-content: space-between;
 }
+
+input[type="number"] {
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    font-size: 16px;
+    border: solid 1px rgba(0, 0, 0, 0.162);
+  }
+  
+  input[type="number"]:focus {
+    outline: none;
+  }
+  
+  input[type="date"] {
+    width: 130px;
+    height: 25px;
+    background-color: transparent;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.162);
+  }
+  
+  input[type="date"]:focus {
+    outline: none;
+  }
+
+  input[type="submit"]{
+    width: 360px;
+  }

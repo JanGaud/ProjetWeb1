@@ -27,8 +27,6 @@ use Exception;
                             $img_upload_path = '../public/img-upload/'.$new_img_name;
                             move_uploaded_file($tmp_name, $img_upload_path);
                             return $new_img_name;
-                        }else {
-                            throw new Exception("Vous ne pouvez pas télécharger des fichiers de ce type.");                   
                         }
                     }
                 }else {

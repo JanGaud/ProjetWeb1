@@ -152,10 +152,3 @@ text-align: center;
     border: 0.25rem solid  #125688!important;
 }
 
-
-/* Ajout enchere */
-
-.ajout-enchere{
-    display: flex;
-    flex-direction: column;
-}
