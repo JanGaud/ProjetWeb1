@@ -3,7 +3,7 @@
 {% block title %}Mes timbres{% endblock %}
 
 {% block body %}
-<h1>Mes timbres</h1>
+<h1 class="h1Anim">Mes timbres</h1>
 
 <section class="presentation-cartes">
   {% for timbre in timbres %}
@@ -11,7 +11,7 @@
 
     <section class="separateur-flex">
       <div class="image-timbre">
-        <img src="../../public/css/img/Timbre.png" alt="">
+        <img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt="">
       </div>
       <div class="carte-droite">
         <h3> {{ timbre.titreTimbre }} </h3>
@@ -35,5 +35,37 @@
     </section>
   </article>
   {% endfor %}
+
+  <script>// la date de fin de lenchere
+    var countDownDate = {{ fin|json_encode|raw }};
+    countDownDate = new Date(countDownDate).getTime();
+  
+  // Update the count down every 1 second
+    var x = setInterval(function() {
+  
+    // la date du debut de lenchere
+    var now =  new Date().getTime();
+
+// Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    // Display the result in the element with id="countdown"
+    document.getElementById("days").innerHTML = days + "j";
+    document.getElementById("hours").innerHTML = hours + "h ";
+    document.getElementById("minutes").innerHTML = minutes + "m ";
+    document.getElementById("seconds").innerHTML = seconds + "s ";
+      
+    // If the count down is finished, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);</script>
 </section>
 {% endblock %}

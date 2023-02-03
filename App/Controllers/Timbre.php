@@ -62,7 +62,5 @@ class Timbre extends \Core\Controller{
         }else{
             View::renderTemplate("User/connexion.html"); 
         };
-
-
     }
 }
