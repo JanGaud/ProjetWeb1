@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Mes timbres{% endblock %}
+
+{% block body %}
+<h1>Mes timbres</h1>
+
+<section class="presentation-cartes">
+  {% for timbre in timbres %}
+  <article class="article-base">
+
+    <section class="separateur-flex">
+      <div class="image-timbre">
+        <img src="../../public/css/img/Timbre.png" alt="">
+      </div>
+      <div class="carte-droite">
+        <h3> {{ timbre.titreTimbre }} </h3>
+        <p>{{ timbre.descriptionTimbre}}</p>
+      </div>
+    </section>
+    <section class="bas-carte">
+        <div class="temps-restant">
+            <img src="../../public/css/img/clock.png" alt="">
+            <small>2j:6h:45m</small>
+        </div>
+        <div class="prix-cartes">
+          <pre>{{ timbre.startPrice }}$</pre>
+        </div>
+        <div class="interaction-cartes">
+            <button><img src="../../public/css/img/heart.png" alt=""></button>
+            <button><img src="../../public/css/img/bid.png" alt=""></button>
+            <button><img src="../../public/css/img/plus.png" alt=""></button>
+        </div>
+       
+    </section>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -53,4 +53,41 @@ class Timbre extends \Core\Model
         }
         return $idTimbre;
     }
+
+    public static function getUserTimbres($userId){
+        $db = static::getDB();
+        $stmt = $db->query("SELECT * FROM timbre WHERE User_idUser = $userId");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function getTimbre($timbreId){
+        $db = static::getDB();
+        $sql = "SELECT * FROM timbre  WHERE idTimbre = :timbreId";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(":timbreId", $timbreId);
+        
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        if($result){
+            $timbre = new TimbreModel();
+            $timbre->setTitre($result['titreTimbre']);
+            $timbre->setDescription($result['descriptionTimbre']);
+            $timbre->setQuality($result['quality']);
+            $timbre->setDebut($result['dateStart']);
+            $timbre->setFin($result['dateEnd']);
+            $timbre->setPrixInit($result['startPrice']);
+            $timbre->setImage(static::getTimbreImages($timbreId));
+            return $timbre;
+        }
+        return null;
+    }
+    
+    private static function getTimbreImages($timbreId){
+        $db = static::getDB();
+        $sql = "SELECT imageUrl FROM timbre JOIN image ON timbre.idTimbre = image.Timbre_idTimbre  WHERE idTimbre = :timbreId";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(":timbreId", $timbreId);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
