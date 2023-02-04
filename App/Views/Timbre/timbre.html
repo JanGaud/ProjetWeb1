@@ -14,19 +14,18 @@
             <img src="" alt="">
         </div>
           <div class="infos-carte-img">
-              <img id="big-img" src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt="">
+              <img id="big-img" src="http://localhost/ProjetWeb1/public/img-upload/{{ timbre.getImage()[0]['imageUrl'] }}" alt="">
           </div>
         </div>
-
         <div class="infos-carte-text">
           <div class="infos-carte-titre">
-            <h1>{{ titre }}</h1>
+            <h1>{{ timbre.getTitre() }}</h1>
           </div>
           <div>
-            <p>{{ description }}</p>
+            <p>{{ timbre.getDescription() }}</p>
           </div>
           <div>
-              <section class="infos-carte-prix"><div><h4>Mise actuelle : </h4> <pre> C {{ prixInit }}$</pre></div>  <div><h4>Enchérisseurs: </h4> <pre> 67</pre></div></section>
+              <section class="infos-carte-prix"><div><h4>Mise actuelle : </h4> <pre> C {{ timbre.getprixInit() }}$</pre></div>  <div><h4>Enchérisseurs: </h4> <pre> 67</pre></div></section>
                 <section class="infos-carte-btn-action">
                   <button class="btn btn-primary btns-actions" id="mpopupLink">Enchérir <img src="../../public/css/img/bid.png" alt=""></button>
                   <button class="btns-actions">Ajouter aux favorits <img src="../../public/css/img/heart.png" alt=""></button>
@@ -344,7 +343,7 @@
     </section>
 
         <script>// la date de fin de lenchere
-            var countDownDate = {{ fin|json_encode|raw }};
+            var countDownDate = {{ timbre.getFin()|json_encode|raw }};
             countDownDate = new Date(countDownDate).getTime();
           
           // Update the count down every 1 second

@@ -85,9 +85,7 @@ class Timbre extends \Core\Model
     
     private static function getTimbreImages($timbreId){
         $db = static::getDB();
-        $sql = "SELECT imageUrl FROM timbre JOIN image ON timbre.idTimbre = image.Timbre_idTimbre  WHERE idTimbre = :timbreId";
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(":timbreId", $timbreId);
+        $stmt = $db->query("SELECT imageUrl FROM timbre JOIN image ON timbre.idTimbre = image.Timbre_idTimbre  WHERE idTimbre = $timbreId");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

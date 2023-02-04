@@ -559,7 +559,7 @@
 
             <section class="separateur-flex">
               <div class="image-timbre">
-                <img src="../../public/css/img/Timbre.png" alt="">
+                <img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt="">
               </div>
               <div class="carte-droite">
                 <h3> {{ timbre.titreTimbre }} </h3>
@@ -652,14 +652,7 @@
       popup.innerHTML = 'You clicked the bid button!';
       document.body.appendChild(popup);
     });
-       // Add event listener to close popup when clicked outside
-      document.addEventListener('click', (event) => {
-        if (!popup.contains(event.target)) {
-          popup.remove();
-        }
-      });
-  });
-
+    });
 </script>
 {% endblock %}
 

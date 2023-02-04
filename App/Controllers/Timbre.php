@@ -39,8 +39,10 @@ class Timbre extends \Core\Controller{
                $timbre->setDebut($_POST["dateStart"]);
                $timbre->setFin($_POST["dateEnd"]);
                $timbre->setPrixInit($_POST["startPrice"]);
+              
                $idTimbre = Model::create($timbre, $imgPath);
-               View::renderTemplate("Timbre/mesTimbres/$idTimbre");
+               $timbre = Model::getTimbre($idTimbre);
+               View::renderTemplate("Timbre/timbre.html", ['timbre'=>$timbre, 'test' => $timbre->getImage()[0]]);
             }
             catch (Exception $e){
                 View::renderTemplate('Timbre/timbre.html', ["user"=>$user, 'erreur' => $e->getMessage()]);
