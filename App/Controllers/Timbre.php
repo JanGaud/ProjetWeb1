@@ -63,4 +63,9 @@ class Timbre extends \Core\Controller{
             View::renderTemplate("User/connexion.html"); 
         };
     }
+
+    public function leTimbreAction($idTimbre){
+        $timbre = Model::getTimbre($idTimbre);
+        View::renderTemplate('Timbre/leTimbre.html', ['timbres'=>$timbre]);
+    }
 }

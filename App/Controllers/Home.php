@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use App\Models\Timbre;
 use \Core\View;
 
 /**
@@ -25,7 +26,8 @@ class Home extends \Core\Controller
 
     public function catalogueAction()
     {      
+        $timbres = Timbre::getAll();
         $user = User::getAll();
-        View::renderTemplate('catalogue.html');
+        View::renderTemplate('catalogue.html', ['timbres'=>$timbres]);
     }
 }

@@ -98,3 +98,10 @@
     align-items: center;
 }
 
+.temps-restant{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10px;
+}
