@@ -10,6 +10,8 @@ namespace App;
 class Config
 {
 
+    /*****************************database local*******************************************/
+
     /**
      * Database host
      * @var string
@@ -20,6 +22,7 @@ class Config
      * Database name
      * @var string
      */
+
     const DB_NAME = 'projetweb1';
 
     /**
@@ -42,6 +45,20 @@ class Config
 
     
 
-    const URL_RACINE = "http://ProjetWeb1";
+    const URL_RACINE = "http://ProjetWeb1/";
+
+/*****************************database Webdev*******************************************/ 
+
+        // const DB_HOST = 'localhost';
+
+        // const DB_NAME = 'e2194798';
+
+        // const DB_USER = 'e2194798';
+
+        // const DB_PASSWORD = '7tbGLCR30GjRQwljrmti';
+
+        // const SHOW_ERRORS = true;
+
+        // const URL_RACINE = "https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/";
 
 }

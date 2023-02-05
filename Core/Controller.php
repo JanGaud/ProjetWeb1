@@ -1,8 +1,7 @@
 <?php
 namespace Core;
-
-// require("App/Config.php");
-
+use App\Config;
+use App\Services\Login;
 
 /**
  * Base controller
@@ -29,7 +28,7 @@ abstract class Controller
     public function __construct($route_params)
     {    
         $this->route_params = $route_params;
-        // $this->url_racine = Config::URL_RACINE;
+        $this->url_racine = Config::URL_RACINE;
     }
 
     /**
@@ -64,6 +63,10 @@ abstract class Controller
      */
     protected function before()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
     }
 
     /**

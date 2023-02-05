@@ -1,13 +1,201 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Page d'enchères{% endblock %}
 
 {% block body %}
 
-    <h1>{{ firstName }}</h1>
+<div id="mpopupBox" class="mpopup">
+  <!-- Modal content -->
+  <div class="modal-content">
+      <div class="modal-header">
+          <button class="close"><img src="../../public/css/img/cancel.png" alt=""></button>
+          <h3>Combiens voulez-vous miser ?</h3>
+      </div>
+      <div class="modal-body">
+        <section class="infos-carte-prix"><div><h4>Mise actuelle : </h4> <pre id="miseAct"> C$1,500</pre></div>  <div><h4>Enchérisseurs: </h4> <pre id="encherrisseurs"> 67</pre></div></section>
+        <section class="formulaire-mise">
+          <form action="post">
+            <input type="hidden" id="idTimbre">
+            <label for="bid">Entrer le montant de votre mise :<input id="number" type="number" value="1501" min="1501"></label>
+            <label for="pw">Entrer votre mot de passe :<input type="password" id="pw"></label>
+            <label for="pw-confirmation">Confirmer le mot de passe :<input type="password" id="pw"></label>
+          </form>
+          
+        </section>     
+      </div>
+      <div class="modal-footer">
+          <small>*Assurez-vous que vos fonds sont suffisants pour la mise, car si non, celle-ci seras annulée !</small>
+          <button type="button" class="btn btn-primary">Confirmer  &nbsp<img src="../../public/css/img/bid.png" alt=""></button>
+      </div>
+  </div>
+</div>
 
-    {% for use in user %}
-        <li>{{ use.firstNameU }}</li>
-    {% endfor %}
+        <h1 class="h1Anim">Les Populaires</h1>
 
+        <section class="presentation-cartes">
+          
+          <article class="article-base">
+
+            <section class="separateur-flex">
+              <div class="image-timbre">
+                <img src="../../public/css/img/Timbre.png" alt="">
+              </div>
+              <div class="carte-droite">
+                <h3>FRANCE 1862 NAPOLEON III SC#22 YT#19 </h3>
+                <p>Napoléon III - Empire Franc, dentelé. Remplacé par le 20 centimes bleu au type Empire lauré émis en avril 1867. Premier timbre dentelé - Retiré en 1870</p>
+              </div>
+            </section>
+            <section class="bas-carte">
+                <div class="temps-restant">
+                    <img src="../../public/css/img/clock.png" alt="">
+                    <small>2j:6h:45m</small>
+                </div>
+                <div class="prix-cartes">
+                  <pre>1,500,800$</pre>
+                </div>
+                <div class="interaction-cartes">
+                    <button><img src="../../public/css/img/heart.png" alt=""></button>
+                    <button class="mpopupLink"><img data-encherrisseurs="15" data-mise="45" data-timbre="3" src="../../public/css/img/bid.png" alt=""></button>
+                    <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+                </div>
+               
+            </section>
+          </article>
+       
+        </section>
+
+
+        <section class="carrousel">
+          <div class="banner-nav">
+            <button class="btn-arrow"><img src="../../public/css/img/left-arrow.png" alt="left"></button>
+            <div class="action-btn"><button class="btns-actions">Voir les horaires &nbsp<img src="../../public/css/img/calendarIcon.png" alt=""></button></div>
+            <button class="btn-arrow"><img src="../../public/css/img/right-arrow.png" alt="left"></button>
+          </div>
+           <img src="../../public/css/img/banniere-web.png" alt="Les encheres sont de retours!">
+        </section>
+
+        <h1 class="h1Anim">Selon vos gouts</h1>
+
+        <section class="presentation-cartes">
+          
+          <article class="article-base">
+
+            <section class="separateur-flex">
+              <div class="image-timbre">
+                <img src="../../public/css/img/Timbre.png" alt="">
+              </div>
+              <div class="carte-droite">
+                <h3>FRANCE 1862 NAPOLEON III SC#22 YT#19 </h3>
+                <p>Napoléon III - Empire Franc, dentelé. Remplacé par le 20 centimes bleu au type Empire lauré émis en avril 1867. Premier timbre dentelé - Retiré en 1870</p>
+              </div>
+            </section>
+            <section class="bas-carte">
+                <div class="temps-restant">
+                    <img src="../../public/css/img/clock.png" alt="">
+                    <small>2j:6h:45m</small>
+                </div>
+                <div class="prix-cartes">
+                  <pre>1,500,800$</pre>
+                </div>
+                <div class="interaction-cartes">
+                    <button><img src="../../public/css/img/heart.png" alt=""></button>
+                    <button class="mpopupLink"><img data-encherrisseurs="15" data-mise="45" data-timbre="3" src="../../public/css/img/bid.png" alt=""></button>
+                    <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+                </div>
+               
+            </section>
+          </article>
+       
+        </section>
+
+        <h1 class="h1Anim">Les nouveaux</h1>
+
+        <section class="presentation-cartes">
+
+        {% for timbre in timbres %}
+          <article class="article-base">
+
+            <section class="separateur-flex">
+              <div class="image-timbre">
+                <img src="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/img-upload/{{ imgPath }}" alt="">
+              </div>
+              <div class="carte-droite">
+                <h3> {{ timbre.titreTimbre }} </h3>
+                <p>{{ timbre.descriptionTimbre }}</p>
+              </div>
+            </section>
+            <section class="bas-carte">
+                <div class="temps-restant">
+                    <img src="../../public/css/img/clock.png" alt="">
+                    <small class="timer"></small>
+                </div>
+                <div class="prix-cartes">
+                  <pre>{{ timbre.startPrice }}$</pre>
+                </div>
+                <div class="interaction-cartes">
+                    <button><img src="../../public/css/img/heart.png" alt=""></button>
+                    <button class="mpopupLink"><img data-encherrisseurs="{{ timbre.getDataEncherisseur() }}" data-mise="45" data-timbre="3" src="../../public/css/img/bid.png" alt=""></button>
+                    <a id="mpopupLink" href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+                </div>
+               
+            </section>
+          </article>
+        {% endfor %}  
+        </section>
+
+      <section class="liens-images">
+
+          <div class="cadre-img">
+            <h1 class="h1Anim">Par collection</h1>
+            <img src="../../public/css/img/post-collection.jpg" alt="">
+          </div>
+
+          <div class="liens-rapides">
+              
+            <div class="boite-lien monarchie">
+              <button>La monarchie</button>
+            </div>
+            <div class="boite-lien deuxiemeGuerre">
+              <button>La deuxième guerre mondiale</button>
+            </div>
+            <div class="boite-lien default">
+              <button>Les défaults de fabrications</button>
+            </div>
+            <div class="boite-lien rares">
+              <button>Les plus rares</button>
+            </div>
+            <div class="boite-lien monde">
+              <button>À travers le monde</button>
+            </div>
+            <div class="boite-lien approuve">
+              <button>Approuvé par le Lord</button>
+            </div>
+        </section>
+      </section>
+
+      
+<script>
+  function updateTimer() {
+    const timers = document.querySelectorAll('.timer');
+    timers.forEach(timer => {
+      var endTime = {{ timbre.dateEnd|json_encode|raw }};
+      endTime = new Date(endTime).getTime();
+      const now = new Date();
+      const difference = endTime - now;
+  
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+      timer.innerHTML = `${days}j:${hours}:${minutes}:${seconds}`;
+    });
+  }
+  
+  setInterval(updateTimer, 1000);
+  </script>
+
+  <script src="../../js/popup-bid.js"></script>
 {% endblock %}
+
+      

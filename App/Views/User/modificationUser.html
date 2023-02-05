@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class="formulaire-modification">
+        <table id="user-info">
+
+             <h1 class="h1Anim">Informations personelles</h1>   
+
+            <tr>
+                <td>Nom:</td>
+                <td>Janis Gaudreault</td>
+                <td> <button>Modifier</button></td>
+            </tr>
+            <tr>
+                <td>Adresse courriel:</td>
+                <td>JanisGaudreault.jg@gmail.com</td>
+                <td> <button>Modifier</button></td>
+            </tr>
+            <tr>
+                <td>Mot de passe:</td>
+                <td>xxxxxxxxxxxxxxxxxxx</td>
+                <td> <button>Modifier</button></td>
+            </tr>
+            <tr>
+              <td>Adresse:</td>
+              <td>2047 rue drummond, H7X2C1</td>
+              <td><button>Modifier</button></td>
+            </tr>
+            <tr>
+                <td>Méthode de paiement:</td>
+                <td>Visa, 465XXXXXXXXXXX</td>
+                <td><button>Modifier</button></td>
+              </tr>
+            <tr>
+              <td>Supprimez le compte:</td>
+              <td></td>
+              <td><button class="btn-supprimer">Supprimez</button></td>
+            </tr>
+          </table>
+    </div>
+
+{% endblock %}

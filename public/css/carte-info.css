@@ -5,18 +5,18 @@
     justify-content: space-around;
 }
 
+.infos-carte-img img{
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    object-fit: cover;  
+}
 
 .infos-carte-img{
     background-color: var(--Xiketic);
-    max-width: 325px;
-    min-width: 325px;
+    width: 350px;
     height: 400px;
-    object-fit: cover;
     overflow: hidden;
-}
-
-.infos-carte-img>img{
-    width: 100%;
 }
 
 .img-infos-carte-separateur{

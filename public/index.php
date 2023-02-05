@@ -1,5 +1,4 @@
 <?php
-session_start();
 /**
  * Front controller
  *
@@ -28,7 +27,7 @@ $router = new Core\Router();
 // Add the routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
-
+$router->add('compte', ['controller' => 'User', 'action' => 'indexAccount']);
 $router->add('{controller}/{action}/{id:\d+}');
 
     

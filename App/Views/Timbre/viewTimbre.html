@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <section class="infos-carte-boite">
+
+        <div class="img-infos-carte-separateur">
+          <div class="mini-img">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+          <div class="infos-carte-img">
+              <img id="big-img" src="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/img-upload/{{ imgPath }}" alt="">
+          </div>
+        </div>
+
+        <div class="infos-carte-text">
+          <div class="infos-carte-titre">
+            <h1>{{ titre }}</h1>
+          </div>
+          <div>
+            <p>{{ description }}</p>
+          </div>
+          <div>
+              <section class="infos-carte-prix"><div><h4>Mise actuelle : </h4> <pre> C {{ prixInit }}$</pre></div>  <div><h4>Enchérisseurs: </h4> <pre> 67</pre></div></section>
+                <section class="infos-carte-btn-action">
+                  <button class="btn btn-primary btns-actions" id="mpopupLink">Enchérir <img src="../../public/css/img/bid.png" alt=""></button>
+                  <button class="btns-actions">Ajouter aux favorits <img src="../../public/css/img/heart.png" alt=""></button>
+                </section>
+          </div>
+          
+          <div class="countdown">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="minutes"></div>
+            <div id="seconds"></div>
+          </div>
+          
+    </section>
+
+    <section class="infos-carte-bas">
+        <div>
+          <h4>Information du vendeur:</h4>
+            <a href="#">Simon Willis (609 ventes)</a> <br>
+            <small>98% de retour d'information positif</small>
+            <span>****************************</span>
+        </div>
+        <div>
+          <h4>Mode de paiements:</h4>
+          <div class="modes-paiements line-separation">
+            <img src="../../public/css/img/amex.png" alt="">
+            <img src="../../public/css/img/google-pay.png" alt="">
+            <img src="../../public/css/img/visa.png" alt="">
+            <img src="../../public/css/img/paypal.png" alt="">
+          </div>
+        </div>
+        <div>
+          <h4>Livraison:</h4>
+          <div class="modes-livraisons line-separation">
+            <img src="../../public/css/img/fedex.png" alt="">
+            <img src="../../public/css/img/dhl.png" alt="">
+            <img src="../../public/css/img/ups-logo.jpg" alt="">
+          </div>
+          <p>Les livraisons sont estimées à environs 10 jours après le paimenet reçu.
+            Elles peuvent être plus rapides si vous payez les frais de livraisons express.
+          </p>
+
+        </div>
+        <div>
+          <h4>Qualité de l'article:</h4>
+          <small>- {{ qualite }}</small>
+        </div>
+    </section>
+  
+
+    <h1>Articles similaires</h1>
+
+    <section class="presentation-cartes">
+          
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/Timbre.png" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>FRANCE 1862 NAPOLEON III SC#22 YT#19 </h3>
+            <p>Napoléon III - Empire Franc, dentelé. Remplacé par le 20 centimes bleu au type Empire lauré émis en avril 1867. Premier timbre dentelé - Retiré en 1870</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>1,500,800$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/rare-stamp-queen-victoriajpg.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>Canada Stamp #74 - Queen Victoria (1898) ½¢</h3>
+            
+            <p>Never hinged with small white adhesion on the gum, but look at these HUGE elephant margins, wow!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>5,800$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/stamp-printed-canada-shows-queen-elizabeth.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>Canada Stamp #329 - Queen Elizabeth II (1953) 5¢</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>770$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/canada-stamp-95-edward-vii-50-1908.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>Canada Stamp #95 - Edward VII (1908) 50¢</h3>
+            
+            <p>Beautiful never hinged copy of the highest value Kind Edward VII issue! These stamps are extremely rare never hinged with good centring and therefore command huge premiums in the catalogue. This copy is a great one with two big margins plus two decent ones and certified by Vincent Graves Greene.</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>1,500$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/044_001.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>France 1965 Sc#1024b, SG#1562a 25c Gallic Cock Rooster</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>2,210$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/russie-vers-timbre.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>RUSSIA - CIRCA 1960: Rare stamp printed in USSR</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>930$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/avion-rare-de-cru-d-exposition-de-timbre.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>L'URSS - CIRCA 1976 : avion rare de cru d'exposition de timbre-poste</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>5,800$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/us-stamp-postage-issues-2721-elvis-presley-29-1993.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>Elvis Presley 29 cent stamp</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>80$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+
+      <article class="article-base">
+
+        <section class="separateur-flex">
+          <div class="image-timbre">
+            <img src="../../public/css/img/vintage-stamps-stamp-collecting.jpg" alt="">
+          </div>
+          <div class="carte-droite">
+            <h3>Islands 1½ (1943) - Curaçao - LastDodo</h3>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem illum sunt, adipisci officia pariatur doloribus ut impedit soluta placeat ad itaque, error, expedita deleniti ducimus tempore amet laudantium numquam animi!</p>
+          </div>
+        </section>
+        <section class="bas-carte">
+            <div class="temps-restant">
+                <img src="../../public/css/img/clock.png" alt="">
+                <small>2j:6h:45m</small>
+            </div>
+            <div class="prix-cartes">
+              <pre>500$</pre>
+            </div>
+            <div class="interaction-cartes">
+                <button><img src="../../public/css/img/heart.png" alt=""></button>
+                <button><img src="../../public/css/img/bid.png" alt=""></button>
+                <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            </div>
+           
+        </section>
+      </article>
+    </section>
+
+        <script>// la date de fin de lenchere
+            var countDownDate = {{ fin|json_encode|raw }};
+            countDownDate = new Date(countDownDate).getTime();
+          
+          // Update the count down every 1 second
+            var x = setInterval(function() {
+          
+            // la date du debut de lenchere
+            var now =  new Date().getTime();
+    
+        // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              
+            // Display the result in the element with id="countdown"
+            document.getElementById("days").innerHTML = days + "j";
+            document.getElementById("hours").innerHTML = hours + "h ";
+            document.getElementById("minutes").innerHTML = minutes + "m ";
+            document.getElementById("seconds").innerHTML = seconds + "s ";
+              
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+          }, 1000);</script>
+        <script src="../../js/loupe.js"></script>
+        <script src="../../js/popup-bid.js"></script>
+{% endblock %}

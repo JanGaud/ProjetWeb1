@@ -2,15 +2,9 @@
 
 namespace App\Models;
 
-enum Privilege:int{
-    case Membre = 1;
-    case Vendeur = 2;
-    case Moderateur = 3;
-    case Master = 4;
-}
-
 class UserModel
 {
+    private $idU;
     private $nom;
     private $prenom;
     private $email;
@@ -114,6 +108,27 @@ class UserModel
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of idU
+     */ 
+    public function getIdU()
+    {
+        return $this->idU;
+    }
+
+    /**
+     * Set the value of idU
+     *
+     * @return  self
+     */ 
+    public function setIdU($idU)
+    {
+        $this->idU = $idU;
 
         return $this;
     }

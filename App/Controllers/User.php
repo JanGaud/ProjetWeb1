@@ -6,6 +6,7 @@ use App\Models\Privilege;
 use App\Models\User as Model;
 use App\Models\UserModel;
 use App\Services\Login;
+use App\Models\Timbre;
 use \Core\View;
 use Exception;
 
@@ -39,10 +40,15 @@ class User extends \Core\Controller
         View::renderTemplate('User/connexion.html', ["user"=>$user]);
     }
 
-    public function creationAction()
-    {      
+    public function ModificationUserAction()
+    {   
+        if(Login::getPrivilege()!= Privilege::$Membre){
+            View::renderTemplate("403.html"); 
+        }
+        else{
         $user = Model::getAll();
-        View::renderTemplate('User/creationEnchere.html', ["user"=>$user]);
+        View::renderTemplate('User/modificationUser.html', ["user"=>$user]);
+        }
     }
 
     public function inscriptionPostAction(){
@@ -53,16 +59,59 @@ class User extends \Core\Controller
         $user->setEmail($_REQUEST['emailU']);
         $user->setPassword(password_hash($_REQUEST['passwordU'], PASSWORD_DEFAULT));
         $user->setPhone($_REQUEST['phoneU']);
+        $timbres = Timbre::getAll();
         
             try {
-                Model::create($user, Privilege::Membre->value);
-                Login::loginUser($user, Privilege::Membre);
-                View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom()]);
+                $idU = Model::create($user, Privilege::$Membre);
+                $user->setIdU($idU);
+                Login::loginUser($user, Privilege::$Membre);
+                View::renderTemplate('catalogue.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                        "lastName"=>Login::getUser()->getNom(),
+                                                        "timbres"=>$timbres]);
             } 
             catch (Exception $e) {
-                $error = "L'adresse courriel existe déjà!";
+                $error = $e->getMessage();
                 View::renderTemplate("User/inscription.html", ['erreur' => $error]);
             }   
+    }
+
+
+    public function connexionPostAction(){
+       $mail = $_REQUEST['emailU'];
+       $pw = $_REQUEST['passwordU'];
+       $user = Model::getUser($mail);
+       $timbres = Timbre::getAll();
+
+       if($user){
+        //authentifier le mot de passe
+        $hash = $user->getPassword();
+        if(password_verify($pw, $hash)){
+            //connecter l'utilisateur
+            Login::loginUser($user, Privilege::$Membre);
+            View::renderTemplate('catalogue.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                    "lastName"=>Login::getUser()->getNom(),
+                                                    "timbres"=>$timbres]);
+        }
+        else{
+            $error = "Le mot de passe entré ne correspond pas à celui attendu!";
+                View::renderTemplate("User/connexion.html", ['erreur' => $error]);
+        }
+       }
+       else{
+        //message d'erreur
+        $error = "L'adresse courriel n'est pas dans notre base de donnée!";
+                View::renderTemplate("User/connexion.html", ['erreur' => $error]);
+       }
+
+    }
+
+    public function indexAccountAction(){
+        if(Login::isLogged()){
+            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                    "lastName"=>Login::getUser()->getNom()]);
+        }else{
+            View::renderTemplate("User/connexion.html"); 
+        }
     }
 
     public function logoutAction(){               
@@ -73,6 +122,5 @@ class User extends \Core\Controller
 
         }
         header("Location:/ProjetWeb1/public/Home/index");
-
     }
 }

@@ -1,33 +1,65 @@
 {% extends "base.html" %}
 
-{% block title %}Inscription{% endblock %}
+{% block title %}Création d'enchère{% endblock %}
 
 {% block body %}
 
 <div class="main-block">
-    <h1>Connexion</h1>
-    <form action="inscriptionPost" method="post">      
-      <label id="icon" for="emailU"><i class="fas fa-envelope"></i></label>
-      <input type="email" name="emailU" id="emailU" placeholder="Adresse courriel" required/> 
+    <h1>Creation d'enchere</h1>
+    {% if erreur %}
+    <div class="error-bubble">
+       <p>{{ erreur }}</p>
+    </div>
+    {% endif %}
+    
+    <form class="ajout-enchere" method="post" action="encherePost" enctype="multipart/form-data">
 
-      <label id="icon" for="passwordU"><i class="fas fa-unlock-alt"></i></label>
-      <input type="password" name="passwordU" id="passwordU" placeholder="Mot de passe" required/>
+        <div><label for="image"><input type="file" accept="image/png, image/jpeg" required name="my_image" id="fileInput"></label></div>
+        <!-- <div><img src="http://localhost/ProjetWeb1/public/img-upload/{{ imgPath }}" alt=""></div> -->
 
-      <hr>  
-      <div class="btn-block">
-        <button class="btns-actions" type="submit" href="/">Confirmer</button>
-      </div>
-      <hr>
-        <h4>Connexion rapide</h4>
-        <div class="inscription-social">
-            <a href="#" class="fa fa-facebook"> Facebook</a>
-            <a href="#" class="fa fa-twitter"> Twitter</a>
-            <a href="#" class="fa fa-instagram"> Instagram</a>
-            <a href="#" class="fa fa-google"> G-mail</a>
+        <div>
+          <label for="titreTimbre"><input type="text" name="titreTimbre" required placeholder="Entrez le titre du timbre...">  
+           </label>
         </div>
 
-        <hr>
+        <div><label for="descriptionTimbre"><textarea name="descriptionTimbre" cols="30" 
+          rows="10" placeholder="Entrez une description du timbre..."></textarea></label>
+        </div>
+
+        <div>
+          <label for="quality">Condition:
+            <select name="quality" id="quality" required>
+              <option value="Parfaite">Parfaite</option>
+              <option value="Medium">Medium</option>
+              <option value="Medium/Basse">Medium/Basse</option>
+              <option value="Basse">Basse</option>
+            </select>
+          </label>
+        </div>
+
+        <div><label for="startPrice">Prix initial:<input type="number" min="0" name="startPrice"></label></div>
+
+        <div class="form-date">
+          <label for="dateStart">Début:<input id="startDate" min="" type="date" name="dateStart"></label>
+          <label for="dateEnd">Fin:<input id="endDate" min="" type="date" name="dateEnd"></label>
+        </div>
+
+        <div><input class="btns-actions" type="submit" name="submit" value="Upload"></div>
+
     </form>
   </div>
+
+  <script>
+    const today = new Date();
+    document.getElementById("startDate").min = today.toISOString().split("T")[0];
+  
+    document.getElementById("startDate").addEventListener("input", function() {
+      const startDate = new Date(this.value);
+      const endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+      document.getElementById("endDate").min = endDate.toISOString().split("T")[0];
+    });
+
+  </script>
+
 
 {% endblock %}

@@ -9,10 +9,22 @@
 </head>
 <body>
 
-  {% if app.session.get('key')}
+  {% if connected %}
     <section class="top-header">
-      <section class="client-connexion">     
-          <a href="http://localhost/ProjetWeb1/public/User/Connexion">Connexion</a><pre>/</pre><a href="http://localhost/ProjetWeb1/public/User/inscription">Inscription</a>
+      <section class="client-connexion">
+          <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/User/logout">Déconnexion</a> 
+          <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/User/ModificationUser"><small>Bienvenue &nbsp {{ firstName }} {{ lastName }}</small></a>
+      </section>
+      <section class="notifications-utilisateur">
+        <div class="dropdown">
+          <button class="dropdown-btn btn-user"><img src="../../public/css/img/user.png" alt="utilisateur"></button>
+          <div class="dropdown-content">
+            <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/creation">Ajouter un enchère</a>
+            <a href="#">Vos favorits</a>
+            <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/mesTimbres">Mes enchères</a>
+          </div>  
+        </div>
+          <button><img src="../../public/css/img/active.png" alt="notifications"></button>
       </section>
       <section class="barre-recherche">
             <div class="icone-fleche-bas"><img src="../../public/css/img/down.png" alt="icone-fleche-bas"></div>
@@ -22,32 +34,31 @@
             <div class="icone-recherche"><img src="../../public/css/img/search.png" alt="icone rechercher"></div>
       </section>
     </section>
-  {% else }
-    <section class="top-header">
-      <section class="client-connexion">     
-          <a href="#">Déconnexion</a> 
-          <small>Bienvenue Nicolas Cage</small>
+
+  {% else %}
+      <section class="top-header">
+        <section class="client-connexion">     
+            <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/user/connexion">Connexion</a><pre>/</pre><a       
+            href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/User/inscription">Inscription</a>
+        </section>
+        <section class="barre-recherche">
+              <div class="icone-fleche-bas"><img src="../../public/css/img/down.png" alt="icone-fleche-bas"></div>
+              <label for="barre-recherche" name="search">
+                <input type="text">
+              </label>
+              <div class="icone-recherche"><img src="../../public/css/img/search.png" alt="icone rechercher"></div>
+        </section>
       </section>
-      <section class="notifications-utilisateur">
-          <button><img src="/css/img/user.png" alt="utilisateur"></button>
-          <button><img src="/css/img/active.png" alt="notifications"></button>
-      </section>
-      <section class="barre-recherche">
-            <div class="icone-fleche-bas"><img src="/css/img/down.png" alt="icone-fleche-bas"></div>
-            <label for="barre-recherche" name="search">
-              <input type="text">
-            </label> 
-            <div class="icone-recherche"><img src="/css/img/search.png" alt="icone rechercher"></div>
-      </section>
-    </section>
   {% endif %}
 
       <header>
-        <div class="header-logo-container">
+        <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/Home/index">
+          <div class="header-logo-container">
             <img src="../../public/css/img/LS-logo.png" alt="">
-        </div>
+          </div>
+        </a>
         <nav class="navigation-principal">
-            <a href="http://localhost/ProjetWeb1/public/Home/index">Acceuil</a>
+            <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/home/catalogue">Acceuil</a>
             <a href="#">Actualité</a>
             <div class="dropdown">
                 <button class="dropbtn">Collection</button>
@@ -61,7 +72,7 @@
               </div>
                       
             <div class="dropdown">
-                <button class="dropbtn">À propos</Contactez-nous></button>
+                <button class="dropbtn">À propos</button>
                 <div class="dropdown-content">
                   <a href="#">Gallery</a>
                   <a href="#">Archives</a>
@@ -111,8 +122,8 @@
           
           <div class="footer-gauche">
             <div>
-              <h6>Localisation :</h6>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.998200734919!2d-        73.54488668514671!3d45.55036173571218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b89e127551b%3A0xa8bb441b5b51f75f!2s2050%20Pie-IX%20Blvd%2C%20Montreal%2C%20QC%20H1V%203T6!5e0!3m2!1sen!2sca!4v1671645171539!5m2!1sen!2sca" width="125" height="125" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <h6>&#127986; Localisation :</h6>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.998200734919!2d-73.54488668514671!3d45.55036173571218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b89e127551b%3A0xa8bb441b5b51f75f!2s2050%20Pie-IX%20Blvd%2C%20Montreal%2C%20QC%20H1V%203T6!5e0!3m2!1sen!2sca!4v1671645171539!5m2!1sen!2sca" width="125" height="125" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="select-langue">
               <label for="langue" name="`langue">
@@ -126,7 +137,7 @@
           </div>
           </footer>
           <section class="footer-bas">
-            <span>©2022 Copyright: LS-Stamps.com</span> 
+            <span>©2023 Copyright: LS-Stamps.com</span> 
           </section>
 </body>
 </html>

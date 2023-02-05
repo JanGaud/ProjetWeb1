@@ -1,14 +1,16 @@
 .notifications-utilisateur{
     display: flex;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    gap: 30px;
+    z-index: 5;
+    right: 20px;
 }
 
 .notifications-utilisateur>button{
     border: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-right: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.253);
     background-color: var(--MediumCarmine);
     height: 30px;
     width: 50px;
@@ -37,4 +39,20 @@
 
 .client-connexion>a:hover{
     text-decoration: underline;
+}
+
+.btn-user{
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.253);
+    margin-right: 5px;
+    background-color: var(--MediumCarmine);
+    height: 30px;
+    width: 50px;
+}
+
+.btn-user:hover{
+    transition: 0.4s;
+    background-color: var(--HovMediumCarmine);
 }

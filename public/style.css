@@ -6,7 +6,6 @@
 /*css imports*/
 @import url("css/main.css");
 @import url("css/header.css");
-@import url("css/boutons.css");
 @import url("css/infolettre.css");
 @import url("css/error-bubbles.css");
 @import url("css/navigation-principal.css");
@@ -14,15 +13,19 @@
 @import url("css/barre-recherche.css");
 @import url("css/nav-notifications.css");
 @import url("css/cartes-encheres.css");
+@import url("css/boutons.css");
 @import url("css/banner.css");
 @import url("css/boites-liens.css");
 @import url("css/footer.css");
 @import url("css/carte-info.css");
+@import url("css/modification-utilisateur.css");
 @import url("css/loupe.css");
 @import url("css/main-header.css");
 @import url("css/article-acceuil.css");
 @import url("css/article-journalier.css");
 @import url("css/formulaires.css");
+@import url("css/ajout-enchère.css");
+
 
 
 
