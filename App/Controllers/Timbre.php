@@ -39,10 +39,9 @@ class Timbre extends \Core\Controller{
                $timbre->setDebut($_POST["dateStart"]);
                $timbre->setFin($_POST["dateEnd"]);
                $timbre->setPrixInit($_POST["startPrice"]);
-              
                $idTimbre = Model::create($timbre, $imgPath);
                $timbre = Model::getTimbre($idTimbre);
-               View::renderTemplate("Timbre/timbre.html", ['timbre'=>$timbre, 'test' => $timbre->getImage()[0]]);
+               View::renderTemplate("Timbre/timbre.html", ['timbre'=>$timbre]);
             }
             catch (Exception $e){
                 View::renderTemplate('Timbre/timbre.html', ["user"=>$user, 'erreur' => $e->getMessage()]);
@@ -51,7 +50,6 @@ class Timbre extends \Core\Controller{
     }
 
     public function monTimbreAction($idTimbre){
-
         $timbre = Model::getTimbre($idTimbre);
         View::renderTemplate('Timbre/timbre.html', ['timbres'=>$timbre]);
     }
@@ -59,15 +57,15 @@ class Timbre extends \Core\Controller{
     public function mesTimbresAction(){
         if(Login::isLogged()){   
             $userId = Login::getUser()->getIdU();
-            $timbres = Model::getUserTimbres($userId);      
-            View::renderTemplate('Timbre/mesTimbres.html', ['timbres'=>$timbres]);
+            $timbres = Model::getUserTimbres($userId);
+            View::renderTemplate('Timbre/mesTimbres.html', ['timbres'=>$timbres]);        
         }else{
             View::renderTemplate("User/connexion.html"); 
         };
     }
 
-    public function leTimbreAction($idTimbre){
-        $timbre = Model::getTimbre($idTimbre);
-        View::renderTemplate('Timbre/leTimbre.html', ['timbres'=>$timbre]);
+    public function viewTimbreAction($timbreId){
+        $timbre = Model::getTimbre($timbreId);
+        View::renderTemplate('Timbre/viewTimbre.html', ['timbres'=>$timbre]);
     }
 }

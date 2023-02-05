@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-class Bid
+class BidModel
 {
     private $bidId;
     private UserModel $auteur;
-    private EnchereModel $enchere;
+    private $enchereId;
     private $time;
     private $bid;
 
@@ -72,26 +72,6 @@ class Bid
     }
 
     /**
-     * Get the value of enchere
-     */ 
-    public function getEnchere()
-    {
-        return $this->enchere;
-    }
-
-    /**
-     * Set the value of enchere
-     *
-     * @return  self
-     */ 
-    public function setEnchere($enchere)
-    {
-        $this->enchere = $enchere;
-
-        return $this;
-    }
-
-    /**
      * Get the value of auteur
      */ 
     public function getAuteur()
@@ -107,6 +87,26 @@ class Bid
     public function setAuteur($auteur)
     {
         $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of enchereId
+     */ 
+    public function getEnchereId()
+    {
+        return $this->enchereId;
+    }
+
+    /**
+     * Set the value of enchereId
+     *
+     * @return  self
+     */ 
+    public function setEnchereId($enchereId)
+    {
+        $this->enchereId = $enchereId;
 
         return $this;
     }

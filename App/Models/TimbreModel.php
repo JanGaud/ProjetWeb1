@@ -13,6 +13,10 @@ class TimbreModel
     private $fin;
     private $image;
     private $bids = [];
+    private $dataEncherisseur;
+    private $dataMise;
+    private $dataMiseAct;
+    private $dataId;
 
     /**
      * Get the value of prixInit
@@ -190,6 +194,86 @@ class TimbreModel
     public function setUserId($userId)
     {
         $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataEncherisseur
+     */ 
+    public function getDataEncherisseur()
+    {
+        return $this->dataEncherisseur;
+    }
+
+    /**
+     * Set the value of dataEncherisseur
+     *
+     * @return  self
+     */ 
+    public function setDataEncherisseur($dataEncherisseur)
+    {
+        $this->dataEncherisseur = $dataEncherisseur;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataMise
+     */ 
+    public function getDataMise()
+    {
+        return $this->dataMise;
+    }
+
+    /**
+     * Set the value of dataMise
+     *
+     * @return  self
+     */ 
+    public function setDataMise($dataMise)
+    {
+        $this->dataMise = $dataMise;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataMiseAct
+     */ 
+    public function getDataMiseAct()
+    {
+        return $this->dataMiseAct;
+    }
+
+    /**
+     * Set the value of dataMiseAct
+     *
+     * @return  self
+     */ 
+    public function setDataMiseAct($dataMiseAct)
+    {
+        $this->dataMiseAct = $dataMiseAct;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataId
+     */ 
+    public function getDataId()
+    {
+        return $this->dataId;
+    }
+
+    /**
+     * Set the value of dataId
+     *
+     * @return  self
+     */ 
+    public function setDataId($dataId)
+    {
+        $this->dataId = $dataId;
 
         return $this;
     }

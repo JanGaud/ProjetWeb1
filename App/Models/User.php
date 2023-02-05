@@ -20,7 +20,7 @@ class User extends \Core\Model
     public static function getAll()
     {
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM User');
+        $stmt = $db->query('SELECT * FROM user');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 /**
@@ -59,7 +59,7 @@ class User extends \Core\Model
     public static function create(UserModel $user, $privilege)
     {
         $db = static::getDB();
-        $sql = "INSERT INTO User (firstNameU, lastNameU, phoneU, emailU, passwordU, Privileges_idPrivileges)    
+        $sql = "INSERT INTO user (firstNameU, lastNameU, phoneU, emailU, passwordU, Privileges_idPrivileges)    
                 VALUES (:firstNameU, :lastNameU, :phoneU, :emailU, :passwordU, :Privileges_idPrivileges)";
 
         $stmt = $db->prepare($sql);

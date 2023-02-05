@@ -6,6 +6,7 @@ use App\Models\Privilege;
 use App\Models\User as Model;
 use App\Models\UserModel;
 use App\Services\Login;
+use App\Models\Timbre;
 use \Core\View;
 use Exception;
 
@@ -58,13 +59,15 @@ class User extends \Core\Controller
         $user->setEmail($_REQUEST['emailU']);
         $user->setPassword(password_hash($_REQUEST['passwordU'], PASSWORD_DEFAULT));
         $user->setPhone($_REQUEST['phoneU']);
+        $timbres = Timbre::getAll();
         
             try {
                 $idU = Model::create($user, Privilege::$Membre);
                 $user->setIdU($idU);
                 Login::loginUser($user, Privilege::$Membre);
-                View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
-                                                        "lastName"=>Login::getUser()->getNom()]);
+                View::renderTemplate('catalogue.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                        "lastName"=>Login::getUser()->getNom(),
+                                                        "timbres"=>$timbres]);
             } 
             catch (Exception $e) {
                 $error = $e->getMessage();
@@ -77,6 +80,7 @@ class User extends \Core\Controller
        $mail = $_REQUEST['emailU'];
        $pw = $_REQUEST['passwordU'];
        $user = Model::getUser($mail);
+       $timbres = Timbre::getAll();
 
        if($user){
         //authentifier le mot de passe
@@ -84,8 +88,9 @@ class User extends \Core\Controller
         if(password_verify($pw, $hash)){
             //connecter l'utilisateur
             Login::loginUser($user, Privilege::$Membre);
-            View::renderTemplate('User/index.html', ["firstName"=>Login::getUser()->getPrenom(),
-                                                    "lastName"=>Login::getUser()->getNom()]);
+            View::renderTemplate('catalogue.html', ["firstName"=>Login::getUser()->getPrenom(),
+                                                    "lastName"=>Login::getUser()->getNom(),
+                                                    "timbres"=>$timbres]);
         }
         else{
             $error = "Le mot de passe entré ne correspond pas à celui attendu!";

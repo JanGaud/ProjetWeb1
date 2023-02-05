@@ -4,19 +4,34 @@ namespace App\Models;
 
 use PDO;
 use Exception;
+use App\Models\Bid;
+use App\Models\TimbreModel;
 
-/**
- * Example user model
- *
- * PHP version 7.0
- */
+
 class Timbre extends \Core\Model
 {
     public static function getAll()
     {
         $db = static::getDB();
         $stmt = $db->query('SELECT * FROM timbre');
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $timbres = [];
+        foreach($result as $value){
+            $timbre = new TimbreModel();
+            $timbre->setPrixInit($value['startPrice']);
+            $timbre->setTitre($value['titreTimbre']);
+            $timbre->setDescription($value['descriptionTimbre']);
+            $timbre->setDebut($value['dateStart']);
+            $timbre->setFin($value['dateEnd']);
+            $timbre->setImage(static::getTimbreImages($value['idTimbre']));
+            $timbre->setQuality($value['quality']);
+            $timbre->setUserId($value['User_idUser']);
+            $timbre->setDataEncherisseur(Bid::count($value['idTimbre']));
+            $timbre->setDataMiseAct(Bid::lastBid($value['idTimbre']));
+            $timbre->setDataId($value['idTimbre']);
+            array_push($timbres, $timbre);
+        }
+        return $timbres;
     }
 
     public static function create(TimbreModel $timbre, $img)

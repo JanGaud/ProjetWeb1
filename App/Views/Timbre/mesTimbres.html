@@ -11,7 +11,7 @@
 
     <section class="separateur-flex">
       <div class="image-timbre">
-        <img src="http://localhost/ProjetWeb1/public/img-upload/{{ timbre.getImage()[0]['imageUrl'] }}" alt="">
+        <img src="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/img-upload/{{ timbre.getImage()[0]['imageUrl'] }}" alt="">
       </div>
       <div class="carte-droite">
         <h3> {{ timbre.titreTimbre }} </h3>
@@ -21,51 +21,56 @@
     <section class="bas-carte">
         <div class="temps-restant">
             <img src="../../public/css/img/clock.png" alt="">
-            <small>2j:6h:45m</small>
+            <small class="timer" data-fin="{{ timbre.dateEnd }}"></small>
         </div>
         <div class="prix-cartes">
           <pre>{{ timbre.startPrice }}$</pre>
         </div>
         <div class="interaction-cartes">
             <button><img src="../../public/css/img/heart.png" alt=""></button>
-            <button><img src="../../public/css/img/bid.png" alt=""></button>
-            <a href="http://localhost/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
+            <button><img src="../../public/css/img/edit.png" alt=""></button>
+            <a href="https://e2194798.webdev.cmaisonneuve.qc.ca/ProjetWeb1/public/timbre/leTimbre"><button><img src="../../public/css/img/plus.png" alt=""></button></a>
         </div>
        
     </section>
   </article>
   {% endfor %}
 
-  <script>// la date de fin de lenchere
-    var countDownDate = {{ fin|json_encode|raw }};
-    countDownDate = new Date(countDownDate).getTime();
-  
-  // Update the count down every 1 second
-    var x = setInterval(function() {
-  
-    // la date du debut de lenchere
-    var now =  new Date().getTime();
-
-// Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <script>
+    function updateTimer() {
+      const timers = document.querySelectorAll('.timer');
+      timers.forEach(timer => {
+      // la date de fin de lenchere
+              var countDownDate = timer.dataset.fin;
+              countDownDate = new Date(countDownDate).getTime();
+            
+            // Update the count down every 1 second
+              var x = setInterval(function() {
+            
+              // la date du debut de lenchere
+              var now =  new Date().getTime();
       
-    // Display the result in the element with id="countdown"
-    document.getElementById("days").innerHTML = days + "j";
-    document.getElementById("hours").innerHTML = hours + "h ";
-    document.getElementById("minutes").innerHTML = minutes + "m ";
-    document.getElementById("seconds").innerHTML = seconds + "s ";
-      
-    // If the count down is finished, write some text 
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("countdown").innerHTML = "EXPIRED";
+          // Find the distance between now and the count down date
+              var distance = countDownDate - now;
+  
+              // Time calculations for days, hours, minutes and seconds
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              // Display the result in the element with id="countdown"
+                timer.innerHTML = days+"j:"+ hours+"h:"+minutes+"m:"+seconds+"s";
+                
+              // If the count down is finished, write some text 
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+              }
+            }, 1000);
+      });
     }
-  }, 1000);</script>
-</section>
+    
+    setInterval(updateTimer, 1000);
+    </script>
 {% endblock %}
